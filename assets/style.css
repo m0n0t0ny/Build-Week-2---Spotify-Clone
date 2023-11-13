@@ -31,12 +31,7 @@
   margin: 0;
 }
 
-html {
-  width: 100%;
-}
-
 body {
-  width: 100%;
   font-family: "CircularBook", sans-serif;
   min-height: 100vh;
 }
@@ -66,28 +61,18 @@ button {
 .mega-grid {
   width: 100vw;
   height: 100vh;
-  gap: 8px;
-  padding: 8px;
   grid-template-areas:
     "left-aside main right-aside"
     "footer footer footer";
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr auto;
-  position: relative;
 }
 
 /* ! ---------- ASIDE ---------- */
 
 #left-aside {
-  z-index: 4;
-  width: 300px;
   grid-area: left-aside;
   background-color: black;
-}
-
-#left-aside-navbar {
-  height: 100%;
-  gap: 8px;
 }
 
 #left-aside-navbar-header {
@@ -98,17 +83,9 @@ button {
   background-color: #121212;
 }
 
-#left-aside-navbar-header-inner a {
-  gap: 20px;
-  height: 40px;
-  font-size: 1rem;
-  font-family: "CircularBold", sans-serif;
-}
-
+#left-aside-navbar-header-inner a,
 #left-aside-navbar-main-inner a {
-  gap: 20px;
   height: 40px;
-  font-size: 1rem;
   font-family: "CircularBold", sans-serif;
 }
 
@@ -122,14 +99,18 @@ button {
 
 #main {
   grid-area: main;
-  background: rgb(18, 18, 18);
-  background: linear-gradient(
-    0deg,
-    rgba(18, 18, 18, 1) 0%,
-    rgba(34, 34, 34, 1) 100%
-  );
   height: 100%;
   gap: 8px;
+}
+
+@media screen and (min-width: 576px) {
+  #main {
+    background: linear-gradient(
+      0deg,
+      rgba(18, 18, 18, 1) 0%,
+      rgba(34, 34, 34, 1) 100%
+    );
+  }
 }
 
 #inner-main {
@@ -149,7 +130,6 @@ button {
 
 #main-header button {
   background-color: #00000050;
-  border: none;
   width: 32px;
   height: 32px;
 }
@@ -157,6 +137,29 @@ button {
 #explore-premium-button {
   font-family: "CircularBold";
   width: unset !important;
+}
+
+/* * INNER HOME SECTION */
+
+@media screen and (min-width: 576px) {
+  #inner-home-section {
+    padding-top: 76px !important;
+  }
+}
+
+#recently-listened .card {
+  background-color: #303030;
+}
+
+#recently-listened .card img {
+  min-width: 48px;
+  max-width: 64px;
+}
+
+#recently-listened-inner-header button {
+  background-color: #00000050;
+  width: 32px;
+  height: 32px;
 }
 
 /* ! ---------- MEDIA-QUERIES ---------- */
