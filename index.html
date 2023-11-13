@@ -67,7 +67,7 @@
   </head>
 
   <body>
-    <div class="mega-grid bg-black d-grid p-2 gap-0 gap-sm-1 gap-md-2">
+    <div class="mega-grid bg-black d-grid p-2 gap-2 w-100">
       <aside id="left-aside" class="d-none flex-column d-sm-flex">
         <nav id="left-aside-navbar" class="h-100 gap-2">
           <div id="left-aside-navbar-header" class="rounded-3">
@@ -75,18 +75,18 @@
               id="left-aside-navbar-header-inner"
               class="d-flex flex-column align-items-start py-2 px-3"
             >
-              <li class="navigation-icon py-1 px-2">
+              <li class="navigation-icon py-1 px-2 w-100">
                 <a
-                  class="link-secondary d-flex align-items-center justify-content-between gap-2"
+                  class="link-secondary d-flex align-items-center gap-2"
                   href="#"
                 >
                   <i class="bi bi-house-door fs-4"></i>
                   <span>Home</span>
                 </a>
               </li>
-              <li class="navigation-icon py-1 px-2">
+              <li class="navigation-icon py-1 px-2 w-100">
                 <a
-                  class="link-secondary d-flex align-items-center justify-content-between gap-2"
+                  class="link-secondary d-flex align-items-center gap-2"
                   href="#"
                 >
                   <i class="bi bi-search fs-4"></i>
@@ -124,11 +124,11 @@
         </nav>
       </aside>
 
-      <main id="main" class="rounded-3">
+      <main id="main" class="rounded-3 p-0 p-sm-1 p-md-2">
         <div id="inner-main">
           <div
             id="main-header"
-            class="d-none d-sm-flex align-items-center rounded-3"
+            class="d-none d-sm-flex align-items-center rounded-3 p-2 gap-2"
           >
             <div class="nav-arrows d-flex gap-2 me-auto">
               <button
@@ -158,15 +158,18 @@
             <div id="inner-main-body" class="overflow-hidden">
               <section id="home-section" class="d-flex flex-column">
                 <div id="inner-home-section" class="d-flex flex-column p-2">
-                  <section id="recently-listened" class="">
+                  <section
+                    id="recently-listened"
+                    class="mb-1 mb-sm-2 mb-md-3 mb-lg-4 mb-xl-5"
+                  >
                     <div
                       id="recently-listened-inner-header"
-                      class="inner-home-section-header d-flex w-100"
+                      class="inner-home-section-header d-flex w-100 mb-md-1 mb-lg-2 mb-xl-3"
                     >
-                      <h3 id="time-based-greeting" class="text-white mb-3"></h3>
+                      <h3 id="time-based-greeting" class="text-white"></h3>
                       <div
                         id="mobile-header"
-                        class="gap-3 ms-auto d-flex d-sm-none align-items-center mb-3"
+                        class="gap-3 ms-auto d-flex d-sm-none align-items-center m-0"
                       >
                         <button
                           class="bi bi-bell text-secondary rounded-5 fs-2"
@@ -190,7 +193,7 @@
                             alt="Album cover"
                           />
                           <div class="card-body d-flex align-items-center">
-                            <h5 class="card-title m-0">Card title</h5>
+                            <h5 class="card-title m-0">Playlist title</h5>
                           </div>
                         </div>
                       </div>
@@ -204,7 +207,7 @@
                             alt="Album cover"
                           />
                           <div class="card-body d-flex align-items-center">
-                            <h5 class="card-title m-0">Card title</h5>
+                            <h5 class="card-title m-0">Playlist Title</h5>
                           </div>
                         </div>
                       </div>
@@ -218,7 +221,7 @@
                             alt="Album cover"
                           />
                           <div class="card-body d-flex align-items-center">
-                            <h5 class="card-title m-0">Card title</h5>
+                            <h5 class="card-title m-0">Playlist Title</h5>
                           </div>
                         </div>
                       </div>
@@ -232,7 +235,7 @@
                             alt="Album cover"
                           />
                           <div class="card-body d-flex align-items-center">
-                            <h5 class="card-title m-0">Card title</h5>
+                            <h5 class="card-title m-0">Playlist Title</h5>
                           </div>
                         </div>
                       </div>
@@ -246,7 +249,7 @@
                             alt="Album cover"
                           />
                           <div class="card-body d-flex align-items-center">
-                            <h5 class="card-title m-0">Card title</h5>
+                            <h5 class="card-title m-0">Playlist Title</h5>
                           </div>
                         </div>
                       </div>
@@ -260,7 +263,7 @@
                             alt="Album cover"
                           />
                           <div class="card-body d-flex align-items-center">
-                            <h5 class="card-title m-0">Card title</h5>
+                            <h5 class="card-title m-0">Playlist Title</h5>
                           </div>
                         </div>
                       </div>
@@ -274,7 +277,7 @@
                             alt="Album cover"
                           />
                           <div class="card-body d-flex align-items-center">
-                            <h5 class="card-title m-0">Card title</h5>
+                            <h5 class="card-title m-0">Playlist Title</h5>
                           </div>
                         </div>
                       </div>
@@ -288,7 +291,7 @@
                             alt="Album cover"
                           />
                           <div class="card-body d-flex align-items-center">
-                            <h5 class="card-title m-0">Card title</h5>
+                            <h5 class="card-title m-0">Playlist Title</h5>
                           </div>
                         </div>
                       </div>
@@ -302,15 +305,229 @@
                             alt="Album cover"
                           />
                           <div class="card-body d-flex align-items-center">
-                            <h5 class="card-title m-0">Card title</h5>
+                            <h5 class="card-title m-0">Playlist Title</h5>
                           </div>
                         </div>
                       </div>
                     </div>
                   </section>
-                  <section id="created-for-you">
-                    <h3 class="text-white mb-3">Creato per te</h3>
-                    <div id="recently-listened-inner"></div>
+                  <section
+                    class="inner-home-random-section mb-1 mb-sm-2 mb-md-3 mb-lg-4 mb-xl-5"
+                  >
+                    <div
+                      class="inner-home-random-section-header d-flex align-items-center justify-content-between w-100 mb-3"
+                    >
+                      <h3
+                        id="inner-home-random-section-header-h3"
+                        class="text-white m-0"
+                      >
+                        Creato per te
+                      </h3>
+                      <a href="#" class="text-white">Mostra tutto</a>
+                    </div>
+                    <div
+                      class="inner-home-random-section-body row g-1 g-sm-2 g-md-3"
+                    >
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body text-white">
+                            <h5 class="card-title">Discover Weekly</h5>
+                            <p class="card-text">
+                              II tuo mixtape settimanale di musica...
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body text-white">
+                            <h5 class="card-title">Discover Weekly</h5>
+                            <p class="card-text">
+                              II tuo mixtape settimanale di musica...
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body text-white">
+                            <h5 class="card-title">Discover Weekly</h5>
+                            <p class="card-text">
+                              II tuo mixtape settimanale di musica...
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body text-white">
+                            <h5 class="card-title">Discover Weekly</h5>
+                            <p class="card-text">
+                              II tuo mixtape settimanale di musica...
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body text-white">
+                            <h5 class="card-title">Discover Weekly</h5>
+                            <p class="card-text">
+                              II tuo mixtape settimanale di musica...
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body text-white">
+                            <h5 class="card-title">Discover Weekly</h5>
+                            <p class="card-text">
+                              II tuo mixtape settimanale di musica...
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <section
+                    class="inner-home-random-section mb-1 mb-sm-2 mb-md-3 mb-lg-4 mb-xl-5"
+                  >
+                    <div
+                      class="inner-home-random-section-header d-flex align-items-center justify-content-between w-100 mb-3"
+                    >
+                      <h3
+                        id="inner-home-random-section-header-h3"
+                        class="text-white m-0"
+                      >
+                        Creato per te
+                      </h3>
+                      <a href="#" class="text-white">Mostra tutto</a>
+                    </div>
+                    <div
+                      class="inner-home-random-section-body row g-1 g-sm-2 g-md-3"
+                    >
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body text-white">
+                            <h5 class="card-title">Discover Weekly</h5>
+                            <p class="card-text">
+                              II tuo mixtape settimanale di musica...
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body text-white">
+                            <h5 class="card-title">Discover Weekly</h5>
+                            <p class="card-text">
+                              II tuo mixtape settimanale di musica...
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body text-white">
+                            <h5 class="card-title">Discover Weekly</h5>
+                            <p class="card-text">
+                              II tuo mixtape settimanale di musica...
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body text-white">
+                            <h5 class="card-title">Discover Weekly</h5>
+                            <p class="card-text">
+                              II tuo mixtape settimanale di musica...
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body text-white">
+                            <h5 class="card-title">Discover Weekly</h5>
+                            <p class="card-text">
+                              II tuo mixtape settimanale di musica...
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body text-white">
+                            <h5 class="card-title">Discover Weekly</h5>
+                            <p class="card-text">
+                              II tuo mixtape settimanale di musica...
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </section>
                 </div>
               </section>
@@ -319,7 +536,7 @@
         </div>
       </main>
 
-      <footer id="footer"></footer>
+      <!-- <footer id="footer"></footer> -->
     </div>
 
     <!-- js bootstrap popper -->
