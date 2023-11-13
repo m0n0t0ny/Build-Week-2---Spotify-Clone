@@ -67,9 +67,9 @@
   </head>
 
   <body>
-    <div class="mega-grid bg-black d-grid">
-      <aside id="left-aside" class="d-flex flex-column">
-        <nav id="left-aside-navbar">
+    <div class="mega-grid bg-black d-grid p-2 gap-0 gap-sm-1 gap-md-2">
+      <aside id="left-aside" class="d-none flex-column d-sm-flex">
+        <nav id="left-aside-navbar" class="h-100 gap-2">
           <div id="left-aside-navbar-header" class="rounded-3">
             <ul
               id="left-aside-navbar-header-inner"
@@ -77,19 +77,19 @@
             >
               <li class="navigation-icon py-1 px-2">
                 <a
-                  class="link-secondary d-flex align-items-center justify-content-between"
+                  class="link-secondary d-flex align-items-center justify-content-between gap-2"
                   href="#"
                 >
-                  <i class="bi bi-house-door fs-3"></i>
+                  <i class="bi bi-house-door fs-4"></i>
                   <span>Home</span>
                 </a>
               </li>
               <li class="navigation-icon py-1 px-2">
                 <a
-                  class="link-secondary d-flex align-items-center justify-content-between"
+                  class="link-secondary d-flex align-items-center justify-content-between gap-2"
                   href="#"
                 >
-                  <i class="bi bi-search fs-3"></i>
+                  <i class="bi bi-search fs-4"></i>
                   <span>Cerca</span>
                 </a>
               </li>
@@ -103,45 +103,49 @@
               <li
                 class="navigation-icon py-1 px-2 d-flex justify-content-between align-items-center w-100"
               >
-                <a class="link-secondary d-flex align-items-center" href="#">
-                  <i class="bi bi-layers-fill fs-3"></i>
+                <a
+                  class="link-secondary d-flex align-items-center gap-2 me-2"
+                  href="#"
+                >
+                  <i class="bi bi-layers-fill fs-4"></i>
                   <span>La tua libreria</span>
                 </a>
                 <div>
-                  <a href="#" class="link-secondary bi bi-plus fs-3"></a>
+                  <a href="#" class="link-secondary bi bi-plus fs-4"></a>
                   <a
                     href="#"
-                    class="link-secondary bi bi-arrow-right-short fs-3"
+                    class="link-secondary bi bi-arrow-right-short fs-4"
                   ></a>
                 </div>
               </li>
             </ul>
           </div>
-          <div id="left-aside-navbar-main fs-3"></div>
+          <div id="left-aside-navbar-main fs-4"></div>
         </nav>
       </aside>
 
-      <footer id="footer"></footer>
-
       <main id="main" class="rounded-3">
         <div id="inner-main">
-          <div id="main-header" class="d-flex align-items-center rounded-3">
-            <div class="nav-arrows d-flex gap-2">
+          <div
+            id="main-header"
+            class="d-none d-sm-flex align-items-center rounded-3"
+          >
+            <div class="nav-arrows d-flex gap-2 me-auto">
               <button
-                class="nav-link bi bi-arrow-left-short fs-3 text-secondary rounded-5 d-flex align-items-center justify-content-center"
+                class="nav-link bi bi-arrow-left-short fs-4 text-secondary rounded-5 d-flex align-items-center justify-content-center"
               ></button>
               <button
-                class="nav-link bi bi-arrow-right-short fs-3 text-secondary rounded-5 d-flex align-items-center justify-content-center"
+                class="nav-link bi bi-arrow-right-short fs-4 text-secondary rounded-5 d-flex align-items-center justify-content-center"
               ></button>
             </div>
             <button
               id="explore-premium-button"
-              class="nav-link text-bg-light ms-auto bg-white rounded-5 px-3"
+              class="d-none d-md-flex align-items-center justify-content-center nav-link text-bg-light bg-white rounded-5 px-3"
             >
               Esplora Premium
             </button>
             <button
-              class="nav-link text-white bi bi-arrow-down-circle w-auto rounded-5 px-3"
+              class="d-none nav-link text-white bi bi-arrow-down-circle w-auto rounded-5 px-3 d-md-flex align-items-center justify-content-center gap-2"
             >
               Installa app
             </button>
@@ -150,9 +154,172 @@
               class="bi bi-person-circle text-secondary rounded-5"
             ></button>
           </div>
-          <div id="main-body"></div>
+          <div id="main-body">
+            <div id="inner-main-body" class="overflow-hidden">
+              <section id="home-section" class="d-flex flex-column">
+                <div id="inner-home-section" class="d-flex flex-column p-2">
+                  <section id="recently-listened" class="">
+                    <div
+                      id="recently-listened-inner-header"
+                      class="inner-home-section-header d-flex w-100"
+                    >
+                      <h3 id="time-based-greeting" class="text-white mb-3"></h3>
+                      <div
+                        id="mobile-header"
+                        class="gap-3 ms-auto d-flex d-sm-none align-items-center mb-3"
+                      >
+                        <button
+                          class="bi bi-bell text-secondary rounded-5 fs-2"
+                        ></button>
+                        <button
+                          class="bi bi-clock-history text-secondary rounded-5 fs-2"
+                        ></button>
+                        <button
+                          class="bi bi-gear text-secondary rounded-5 fs-2"
+                        ></button>
+                      </div>
+                    </div>
+                    <div id="recently-listened-inner-body" class="row g-2">
+                      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div
+                          class="card d-flex flex-row rounded-2 text-white ps-0"
+                        >
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body d-flex align-items-center">
+                            <h5 class="card-title m-0">Card title</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div
+                          class="card d-flex flex-row rounded-2 text-white ps-0"
+                        >
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body d-flex align-items-center">
+                            <h5 class="card-title m-0">Card title</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div
+                          class="card d-flex flex-row rounded-2 text-white ps-0"
+                        >
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body d-flex align-items-center">
+                            <h5 class="card-title m-0">Card title</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div
+                          class="card d-flex flex-row rounded-2 text-white ps-0 d-none d-md-flex"
+                        >
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body d-flex align-items-center">
+                            <h5 class="card-title m-0">Card title</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div
+                          class="card d-flex flex-row rounded-2 text-white ps-0 d-none d-md-flex"
+                        >
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body d-flex align-items-center">
+                            <h5 class="card-title m-0">Card title</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div
+                          class="card d-flex flex-row rounded-2 text-white ps-0 d-none d-md-flex"
+                        >
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body d-flex align-items-center">
+                            <h5 class="card-title m-0">Card title</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div
+                          class="card d-flex flex-row rounded-2 text-white ps-0 d-none d-lg-flex"
+                        >
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body d-flex align-items-center">
+                            <h5 class="card-title m-0">Card title</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div
+                          class="card d-flex flex-row rounded-2 text-white ps-0 d-none d-lg-flex"
+                        >
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body d-flex align-items-center">
+                            <h5 class="card-title m-0">Card title</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div
+                          class="card d-flex flex-row rounded-2 text-white ps-0 d-none d-lg-flex d-xl-none"
+                        >
+                          <img
+                            src="./assets/img/cd-cover.jpg"
+                            class="card-img-top"
+                            alt="Album cover"
+                          />
+                          <div class="card-body d-flex align-items-center">
+                            <h5 class="card-title m-0">Card title</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <section id="created-for-you">
+                    <h3 class="text-white mb-3">Creato per te</h3>
+                    <div id="recently-listened-inner"></div>
+                  </section>
+                </div>
+              </section>
+            </div>
+          </div>
         </div>
       </main>
+
+      <footer id="footer"></footer>
     </div>
 
     <!-- js bootstrap popper -->
