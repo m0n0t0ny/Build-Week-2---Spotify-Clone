@@ -31,8 +31,8 @@
 
 /*  colors */
 
-:root {
-  --spotigreen: #1ed760;
+.spotigreen {
+  color: #1ed760;
 }
 
 .currentcolor {
@@ -63,8 +63,8 @@
 }
 
 *::-webkit-scrollbar {
-  height: 0px;
-  width: 0px;
+  height: 15px;
+  width: 15px;
 }
 *::-webkit-scrollbar-track {
   border-radius: 0px;
@@ -81,10 +81,11 @@
 
 *::-webkit-scrollbar-thumb {
   background-color: #303030;
+  /* border: 2px solid #1212123b; */
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #89898950;
+  background-color: #89898907;
 }
 
 *::-webkit-scrollbar-thumb:active {
@@ -134,6 +135,11 @@ img {
   object-fit: cover;
 }
 
+.w-12px {
+  width: 12px;
+  height: 12px;
+}
+
 .w-16px {
   width: 16px;
   height: 16px;
@@ -152,6 +158,18 @@ img {
 .w-40px {
   width: 40px;
   height: 40px;
+}
+
+.fs-07 {
+  font-size: 0.7rem;
+}
+
+.fs-08 {
+  font-size: 0.8rem;
+}
+
+.fs-09 {
+  font-size: 0.9rem;
 }
 
 .card {
@@ -180,10 +198,8 @@ img {
 /* ! ---------- ASIDE ---------- */
 
 #left-aside {
-  height: calc(100vh - 93px);
+  overflow: hidden;
   width: 280px;
-  overflow-y: scroll;
-  grid-area: left-aside;
   background-color: black;
 }
 
@@ -220,6 +236,11 @@ img {
   color: white;
 }
 
+#left-aside-playlists-container {
+  height: calc(100vh - 355px);
+  overflow-y: auto;
+}
+
 .shadower {
   width: 46px;
   background: rgb(18, 18, 18);
@@ -231,8 +252,7 @@ img {
 }
 
 .cover-container {
-  width: 56px;
-  height: 56px;
+  height: 46px;
 }
 
 /* ! ---------- MAIN ---------- */
@@ -337,7 +357,7 @@ header {
 
 #center-player-pane {
   width: 40%;
-  min-width: 30%;
+  min-width: 40%;
 }
 
 #right-player-pane {
