@@ -35,6 +35,10 @@
   --spotigreen: #1ed760;
 }
 
+.currentcolor {
+  fill: currentcolor;
+}
+
 .bg-12 {
   background-color: #121212 !important;
 }
@@ -44,6 +48,10 @@
 }
 
 .grey-font {
+  color: #a7a7a7;
+}
+
+.grey-font-light {
   color: #b3b3b3;
 }
 
@@ -123,10 +131,7 @@ button {
 
 img {
   aspect-ratio: 1 / 1;
-}
-
-.currentcolor {
-  fill: currentcolor;
+  object-fit: cover;
 }
 
 .w-16px {
@@ -178,7 +183,7 @@ img {
   background-color: #121212;
 }
 
-#left-aside-navbar-body-header {
+#left-aside-body {
   background-color: #121212;
 }
 
@@ -186,14 +191,10 @@ img {
   color: white !important;
 }
 
-#left-aside-navbar-header-inner a,
-#left-aside-navbar-body-header-inner-top a {
+#left-aside-header-inner a,
+#left-aside-body-header-inner-top a {
   height: 40px;
   font-family: "CircularBold", sans-serif;
-}
-
-#left-aside-body-categories {
-  height: 40px;
 }
 
 #left-aside-body-categories-inner {
@@ -220,6 +221,11 @@ img {
   );
 }
 
+.small-cover-container {
+  width: 50px;
+  height: 50px;
+}
+
 /* ! ---------- MAIN ---------- */
 
 header {
@@ -234,10 +240,12 @@ header {
 
 @media screen and (min-width: 576px) {
   #main {
+    background: rgb(34, 34, 34);
     background: linear-gradient(
-      0deg,
-      rgba(18, 18, 18, 1) 0%,
-      rgba(34, 34, 34, 1) 75%
+      180deg,
+      rgba(34, 34, 34, 1) 0%,
+      rgba(18, 18, 18, 1) 33%,
+      rgba(18, 18, 18, 1) 100%
     );
   }
 }
