@@ -180,6 +180,7 @@ img {
 .card {
   border: none;
   outline: none;
+  overflow: hidden;
 }
 
 .text-truncate-2 {
@@ -216,6 +217,10 @@ img {
   background-color: #121212;
 }
 
+#left-aside a:hover {
+  text-decoration: none;
+}
+
 #left-aside li:hover {
   color: white !important;
 }
@@ -241,7 +246,7 @@ img {
   color: white;
 }
 
-#left-aside-playlists-container {
+#left-aside-collections-container {
   height: calc(100vh - 355px);
   overflow-y: auto;
 }
@@ -259,6 +264,12 @@ img {
 .cover-container {
   height: 46px;
 }
+
+.lg-cover-container {
+  height: 128px;
+}
+
+.rounded-6
 
 /* ! ---------- RIGHT-ASIDE ---------- */
 
@@ -422,7 +433,7 @@ header {
 }
 
 .img-container {
-  height: 56px;
+  height: 46px;
 }
 
 #center-player-pane {
