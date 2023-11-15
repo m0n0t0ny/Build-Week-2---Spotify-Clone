@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html3 lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -64,6 +64,7 @@
     />
     <!-- stylesheets -->
     <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/range-input.css" />
   </head>
 
   <body>
@@ -681,6 +682,7 @@
         >
           <div class="nav-arrows d-flex gap-2 me-auto">
             <button
+              type="button"
               class="nav-link rounded-5 d-flex grey-font fw-bold align-items-center justify-content-center"
             >
               <svg
@@ -696,6 +698,7 @@
               </svg>
             </button>
             <button
+              type="button"
               class="nav-link rounded-5 d-flex grey-font fw-bold align-items-center justify-content-center"
             >
               <svg
@@ -712,17 +715,21 @@
             </button>
           </div>
           <button
+            type="button"
             id="explore-premium-button"
             class="d-none d-md-flex align-items-center justify-content-center nav-link text-bg-light bg-white rounded-5 px-3"
           >
             Esplora Premium
           </button>
           <button
+            id="install-app"
             class="d-none nav-link text-white bi bi-arrow-down-circle w-auto rounded-5 px-3 d-md-flex align-items-center justify-content-center gap-2"
           >
             Installa app
           </button>
           <button
+            id="whats-new"
+            type="button"
             class="text-secondary rounded-5 d-flex align-items-center justify-content-center"
           >
             <svg
@@ -738,6 +745,23 @@
             </svg>
           </button>
           <button
+            id="toggle-friends-tab"
+            class="text-secondary rounded-5 d-flex align-items-center justify-content-center"
+          >
+            <svg
+              data-encore-id="icon"
+              role="img"
+              aria-hidden="true"
+              class="w-16px currentcolor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3.849 10.034c-.021-.465.026-.93.139-1.381H1.669c.143-.303.375-.556.665-.724l.922-.532a1.631 1.631 0 0 0 .436-2.458 1.809 1.809 0 0 1-.474-1.081c-.01-.19.01-.38.057-.563a1.123 1.123 0 0 1 .627-.7 1.2 1.2 0 0 1 .944 0c.149.065.282.161.392.281.108.12.188.263.237.417.049.183.068.372.057.561a1.81 1.81 0 0 1-.475 1.084 1.6 1.6 0 0 0-.124 1.9c.36-.388.792-.702 1.272-.927v-.015c.48-.546.768-1.233.821-1.958a3.23 3.23 0 0 0-.135-1.132 2.657 2.657 0 0 0-5.04 0c-.111.367-.157.75-.135 1.133.053.724.341 1.41.821 1.955A.126.126 0 0 1 2.565 6a.13.13 0 0 1-.063.091l-.922.532A3.2 3.2 0 0 0-.004 9.396v.75h3.866c.001-.033-.01-.071-.013-.112zm10.568-3.4-.922-.532a.132.132 0 0 1-.064-.091.12.12 0 0 1 .028-.1c.48-.546.768-1.233.821-1.958a3.289 3.289 0 0 0-.135-1.135A2.635 2.635 0 0 0 12.7 1.233a2.669 2.669 0 0 0-3.042.64 2.646 2.646 0 0 0-.554.948c-.11.367-.156.75-.134 1.133.053.724.341 1.41.821 1.955.005.006 0 .011 0 .018.48.225.911.54 1.272.927a1.6 1.6 0 0 0-.125-1.907 1.809 1.809 0 0 1-.474-1.081c-.01-.19.009-.38.057-.563a1.123 1.123 0 0 1 .627-.7 1.2 1.2 0 0 1 .944 0c.149.065.282.161.392.281.107.12.187.26.236.413.05.184.07.375.058.565a1.81 1.81 0 0 1-.475 1.084 1.633 1.633 0 0 0 .438 2.456l.922.532c.29.169.52.421.664.724h-2.319c.113.452.16.918.139 1.383 0 .04-.013.078-.017.117h3.866v-.75a3.2 3.2 0 0 0-1.58-2.778v.004zm-3.625 6-.922-.532a.13.13 0 0 1-.061-.144.122.122 0 0 1 .025-.047 3.33 3.33 0 0 0 .821-1.958 3.229 3.229 0 0 0-.135-1.132 2.657 2.657 0 0 0-5.041 0c-.11.367-.156.75-.134 1.133.053.724.341 1.41.821 1.955a.127.127 0 0 1 .028.106.128.128 0 0 1-.063.091l-.922.532a3.2 3.2 0 0 0-1.584 2.773v.75h8.75v-.75a3.2 3.2 0 0 0-1.583-2.781v.004zm-5.5 2.023c.143-.303.375-.556.665-.724l.922-.532a1.63 1.63 0 0 0 .436-2.458 1.809 1.809 0 0 1-.474-1.081c-.01-.19.009-.38.057-.563a1.123 1.123 0 0 1 .627-.7 1.2 1.2 0 0 1 .944 0c.149.065.282.161.392.281.108.12.188.263.237.417.049.183.068.372.057.561a1.81 1.81 0 0 1-.475 1.084 1.632 1.632 0 0 0 .438 2.456l.922.532c.29.169.52.421.664.724l-5.412.003z"
+              ></path>
+            </svg>
+          </button>
+          <button
+            type="button"
             class="bi bi-person-circle grey-font fw-bold rounded-5 d-flex align-items-center justify-content-center"
           ></button>
         </header>
@@ -760,14 +784,48 @@
                         class="gap-3 ms-auto d-flex d-sm-none align-items-center m-0"
                       >
                         <button
-                          class="bi bi-bell grey-font fw-bold rounded-5 fs-2"
-                        ></button>
+                          id="whats-new-btn"
+                          type="button"
+                          class="grey-font fw-bold rounded-5 d-flex align-items-center justify-content-center"
+                        >
+                          <svg
+                            data-encore-id="icon"
+                            role="img"
+                            aria-hidden="true"
+                            aria-label="What's New"
+                            class="w-24px currentcolor"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z"
+                            ></path>
+                          </svg>
+                        </button>
                         <button
+                          id="history-btn"
+                          type="button"
+                          aria-hidden="true"
+                          aria-label="History"
                           class="bi bi-clock-history grey-font fw-bold rounded-5 fs-2"
                         ></button>
                         <button
-                          class="bi bi-gear grey-font fw-bold rounded-5 fs-2"
-                        ></button>
+                          id="settings-btn"
+                          type="button"
+                          class="grey-font fw-bold rounded-5 d-flex align-items-center justify-content-center"
+                        >
+                          <svg
+                            data-encore-id="icon"
+                            role="img"
+                            aria-hidden="true"
+                            aria-label="Settings"
+                            viewBox="0 0 24 24"
+                            class="w-24px currentcolor"
+                          >
+                            <path
+                              d="m23.2 11.362-1.628-.605a.924.924 0 0 1-.52-.7.88.88 0 0 1 .18-.805l1.2-1.25a1 1 0 0 0 .172-1.145 12.075 12.075 0 0 0-3.084-3.865 1 1 0 0 0-1.154-.086l-1.35.814a.982.982 0 0 1-.931-.02 1.01 1.01 0 0 1-.59-.713l-.206-1.574a1 1 0 0 0-.787-.848 12.15 12.15 0 0 0-4.945 0 1 1 0 0 0-.785.848l-.2 1.524a1.054 1.054 0 0 1-.62.747 1.024 1.024 0 0 1-.968.02l-1.318-.795a1 1 0 0 0-1.152.086 12.118 12.118 0 0 0-3.085 3.867 1 1 0 0 0 .174 1.143l1.174 1.218a.91.91 0 0 1 .182.828.949.949 0 0 1-.532.714l-1.618.6a1 1 0 0 0-.653.955 12.133 12.133 0 0 0 1.1 4.822 1 1 0 0 0 1 .578l1.935-.183a.83.83 0 0 1 .654.327.794.794 0 0 1 .188.726l-.6 1.822a1 1 0 0 0 .34 1.106c.66.504 1.369.94 2.117 1.3.748.36 1.532.642 2.338.841a.988.988 0 0 0 .715-.09 1 1 0 0 0 .362-.332l1.136-1.736a.81.81 0 0 1 1.16.022l1.124 1.714a1 1 0 0 0 1.077.422c1.617-.4 3.133-1.13 4.454-2.145a1 1 0 0 0 .341-1.106l-.613-1.859a.771.771 0 0 1 .18-.7.78.78 0 0 1 .635-.317l1.945.183a.994.994 0 0 0 1-.578 12.133 12.133 0 0 0 1.1-4.822 1 1 0 0 0-.643-.953zm-1.6 2.977c-.103.448-.237.888-.4 1.318l-1.213-.115a2.851 2.851 0 0 0-2.9 3.637l.383 1.16a10.09 10.09 0 0 1-2.473 1.191l-.72-1.1a2.691 2.691 0 0 0-2.275-1.18 2.637 2.637 0 0 0-2.232 1.16l-.735 1.12a10.117 10.117 0 0 1-2.471-1.19l.37-1.125a2.879 2.879 0 0 0-2.93-3.669l-1.2.113a10.46 10.46 0 0 1-.4-1.317 10.09 10.09 0 0 1-.214-1.358l.93-.345a3.032 3.032 0 0 0 1.095-4.8L3.55 7.15a10.158 10.158 0 0 1 1.71-2.146l.688.415a3 3 0 0 0 2.875.066 3.022 3.022 0 0 0 1.726-2.283l.105-.8a10.174 10.174 0 0 1 2.745 0l.11.844a3.099 3.099 0 0 0 4.542 2.184l.721-.435a10.22 10.22 0 0 1 1.712 2.146l-.694.72a3.005 3.005 0 0 0 1.084 4.768l.942.35c-.042.457-.113.912-.215 1.36H21.6zM12 7.001a5 5 0 1 0 5 5 5.006 5.006 0 0 0-4.993-5H12zm0 8a3 3 0 1 1 .007 0H12z"
+                            ></path>
+                          </svg>
+                        </button>
                       </div>
                     </div>
                     <div id="recently-listened-inner-body" class="row g-2">
@@ -780,7 +838,9 @@
                             class="img-fluid rounded-start"
                             alt="Album cover"
                           />
-                          <div class="card-body d-flex align-items-center">
+                          <div
+                            class="card-body p-0 ps-2 d-flex align-items-center"
+                          >
                             <h5 class="card-title text-truncate-2 m-0">
                               Playlist title
                             </h5>
@@ -794,7 +854,9 @@
                             class="img-fluid rounded-start"
                             alt="Album cover"
                           />
-                          <div class="card-body d-flex align-items-center">
+                          <div
+                            class="card-body p-0 ps-2 d-flex align-items-center"
+                          >
                             <h5 class="card-title text-truncate-2 m-0">
                               Playlist Title
                             </h5>
@@ -808,7 +870,9 @@
                             class="img-fluid rounded-start"
                             alt="Album cover"
                           />
-                          <div class="card-body d-flex align-items-center">
+                          <div
+                            class="card-body p-0 ps-2 d-flex align-items-center"
+                          >
                             <h5 class="card-title text-truncate-2 m-0">
                               Playlist Title
                             </h5>
@@ -824,7 +888,9 @@
                             class="img-fluid rounded-start"
                             alt="Album cover"
                           />
-                          <div class="card-body d-flex align-items-center">
+                          <div
+                            class="card-body p-0 ps-2 d-flex align-items-center"
+                          >
                             <h5 class="card-title text-truncate-2 m-0">
                               Playlist Title
                             </h5>
@@ -840,7 +906,9 @@
                             class="img-fluid rounded-start"
                             alt="Album cover"
                           />
-                          <div class="card-body d-flex align-items-center">
+                          <div
+                            class="card-body p-0 ps-2 d-flex align-items-center"
+                          >
                             <h5 class="card-title text-truncate-2 m-0">
                               Playlist Title
                             </h5>
@@ -856,7 +924,9 @@
                             class="img-fluid rounded-start"
                             alt="Album cover"
                           />
-                          <div class="card-body d-flex align-items-center">
+                          <div
+                            class="card-body p-0 ps-2 d-flex align-items-center"
+                          >
                             <h5 class="card-title text-truncate-2 m-0">
                               Playlist Title
                             </h5>
@@ -872,7 +942,9 @@
                             class="img-fluid rounded-start"
                             alt="Album cover"
                           />
-                          <div class="card-body d-flex align-items-center">
+                          <div
+                            class="card-body p-0 ps-2 d-flex align-items-center"
+                          >
                             <h5 class="card-title text-truncate-2 m-0">
                               Playlist Title
                             </h5>
@@ -888,7 +960,9 @@
                             class="img-fluid rounded-start"
                             alt="Album cover"
                           />
-                          <div class="card-body d-flex align-items-center">
+                          <div
+                            class="card-body p-0 ps-2 d-flex align-items-center"
+                          >
                             <h5 class="card-title text-truncate-2 m-0">
                               Playlist Title
                             </h5>
@@ -904,7 +978,9 @@
                             class="img-fluid rounded-start"
                             alt="Album cover"
                           />
-                          <div class="card-body d-flex align-items-center">
+                          <div
+                            class="card-body p-0 ps-2 d-flex align-items-center"
+                          >
                             <h5 class="card-title text-truncate-2 m-0">
                               Playlist Title
                             </h5>
@@ -931,113 +1007,113 @@
                       class="inner-home-random-section-body row g-1 g-sm-2 g-md-3"
                     >
                       <div class="col-4 col-lg-3 col-xl-2">
-                        <div class="card border-0 p-1 p-sm-2 p-md-3">
+                        <div class="card border-0 p-1 p-sm-2 p-md-3 rounded-3">
                           <img
                             src="./assets/img/cd-cover.jpg"
                             class="card-img-top rounded-2"
                             alt="Album cover"
                           />
-                          <div class="card-body text-white">
-                            <h5 class="card-title text-truncate">
+                          <div class="card-body p-0 pt-3 text-white">
+                            <h5 class="card-title text-truncate fs-5">
                               Discover Weekly
                             </h5>
                             <p
-                              class="card-text text-truncate-2 grey-font fw-bold"
+                              class="card-text text-truncate-2 grey-font"
                             >
                               II tuo mixtape settimanale di musica...
                             </p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-4 col-lg-3 col-xl-2">
+                      <div class="col-4 col-lg-3 col-xl-2 rounded-3">
                         <div class="card border-0 p-1 p-sm-2 p-md-3">
                           <img
                             src="./assets/img/cd-cover.jpg"
                             class="card-img-top rounded-2"
                             alt="Album cover"
                           />
-                          <div class="card-body text-white">
-                            <h5 class="card-title text-truncate">
+                          <div class="card-body p-0 pt-3 text-white">
+                            <h5 class="card-title text-truncate fs-5">
                               Discover Weekly
                             </h5>
                             <p
-                              class="card-text text-truncate-2 grey-font fw-bold"
+                              class="card-text text-truncate-2 grey-font"
                             >
                               II tuo mixtape settimanale di musica...
                             </p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-4 col-lg-3 col-xl-2">
+                      <div class="col-4 col-lg-3 col-xl-2 rounded-3">
                         <div class="card border-0 p-1 p-sm-2 p-md-3">
                           <img
                             src="./assets/img/cd-cover.jpg"
                             class="card-img-top rounded-2"
                             alt="Album cover"
                           />
-                          <div class="card-body text-white">
-                            <h5 class="card-title text-truncate">
+                          <div class="card-body p-0 pt-3 text-white">
+                            <h5 class="card-title text-truncate fs-5">
                               Discover Weekly
                             </h5>
                             <p
-                              class="card-text text-truncate-2 grey-font fw-bold"
+                              class="card-text text-truncate-2 grey-font"
                             >
                               II tuo mixtape settimanale di musica...
                             </p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-4 col-lg-3 col-xl-2">
+                      <div class="col-4 col-lg-3 col-xl-2 rounded-3">
                         <div class="card border-0 p-1 p-sm-2 p-md-3">
                           <img
                             src="./assets/img/cd-cover.jpg"
                             class="card-img-top rounded-2"
                             alt="Album cover"
                           />
-                          <div class="card-body text-white">
-                            <h5 class="card-title text-truncate">
+                          <div class="card-body p-0 pt-3 text-white">
+                            <h5 class="card-title text-truncate fs-5">
                               Discover Weekly
                             </h5>
                             <p
-                              class="card-text text-truncate-2 grey-font fw-bold"
+                              class="card-text text-truncate-2 grey-font"
                             >
                               II tuo mixtape settimanale di musica...
                             </p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-4 col-lg-3 col-xl-2">
+                      <div class="col-4 col-lg-3 col-xl-2 rounded-3">
                         <div class="card border-0 p-1 p-sm-2 p-md-3">
                           <img
                             src="./assets/img/cd-cover.jpg"
                             class="card-img-top rounded-2"
                             alt="Album cover"
                           />
-                          <div class="card-body text-white">
-                            <h5 class="card-title text-truncate">
+                          <div class="card-body p-0 pt-3 text-white">
+                            <h5 class="card-title text-truncate fs-5">
                               Discover Weekly
                             </h5>
                             <p
-                              class="card-text text-truncate-2 grey-font fw-bold"
+                              class="card-text text-truncate-2 grey-font"
                             >
                               II tuo mixtape settimanale di musica...
                             </p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-4 col-lg-3 col-xl-2">
+                      <div class="col-4 col-lg-3 col-xl-2 rounded-3">
                         <div class="card border-0 p-1 p-sm-2 p-md-3">
                           <img
                             src="./assets/img/cd-cover.jpg"
                             class="card-img-top rounded-2"
                             alt="Album cover"
                           />
-                          <div class="card-body text-white">
-                            <h5 class="card-title text-truncate">
+                          <div class="card-body p-0 pt-3 text-white">
+                            <h5 class="card-title text-truncate fs-5">
                               Discover Weekly
                             </h5>
                             <p
-                              class="card-text text-truncate-2 grey-font fw-bold"
+                              class="card-text text-truncate-2 grey-font"
                             >
                               II tuo mixtape settimanale di musica...
                             </p>
@@ -1063,114 +1139,114 @@
                     <div
                       class="inner-home-random-section-body row g-1 g-sm-2 g-md-3"
                     >
-                      <div class="col-4 col-lg-3 col-xl-2">
+                      <div class="col-4 col-lg-3 col-xl-2 rounded-3">
                         <div class="card border-0 p-1 p-sm-2 p-md-3">
                           <img
                             src="./assets/img/cd-cover.jpg"
                             class="card-img-top rounded-2"
                             alt="Album cover"
                           />
-                          <div class="card-body text-white">
-                            <h5 class="card-title text-truncate">
+                          <div class="card-body p-0 pt-3 text-white">
+                            <h5 class="card-title text-truncate fs-5">
                               Discover Weekly
                             </h5>
                             <p
-                              class="card-text text-truncate grey-font fw-bold"
+                              class="card-text text-truncate-2 grey-font"
                             >
                               II tuo mixtape settimanale di musica...
                             </p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-4 col-lg-3 col-xl-2">
+                      <div class="col-4 col-lg-3 col-xl-2 rounded-3">
                         <div class="card border-0 p-1 p-sm-2 p-md-3">
                           <img
                             src="./assets/img/cd-cover.jpg"
                             class="card-img-top rounded-2"
                             alt="Album cover"
                           />
-                          <div class="card-body text-white">
-                            <h5 class="card-title text-truncate">
+                          <div class="card-body p-0 pt-3 text-white">
+                            <h5 class="card-title text-truncate fs-5">
                               Discover Weekly
                             </h5>
                             <p
-                              class="card-text text-truncate grey-font fw-bold"
+                              class="card-text text-truncate-2 grey-font"
                             >
                               II tuo mixtape settimanale di musica...
                             </p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-4 col-lg-3 col-xl-2">
+                      <div class="col-4 col-lg-3 col-xl-2 rounded-3">
                         <div class="card border-0 p-1 p-sm-2 p-md-3">
                           <img
                             src="./assets/img/cd-cover.jpg"
                             class="card-img-top rounded-2"
                             alt="Album cover"
                           />
-                          <div class="card-body text-white">
-                            <h5 class="card-title text-truncate">
+                          <div class="card-body p-0 pt-3 text-white">
+                            <h5 class="card-title text-truncate fs-5">
                               Discover Weekly
                             </h5>
                             <p
-                              class="card-text text-truncate grey-font fw-bold"
+                              class="card-text text-truncate-2 grey-font"
                             >
                               II tuo mixtape settimanale di musica...
                             </p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-4 col-lg-3 col-xl-2">
+                      <div class="col-4 col-lg-3 col-xl-2 rounded-3">
                         <div class="card border-0 p-1 p-sm-2 p-md-3">
                           <img
                             src="./assets/img/cd-cover.jpg"
                             class="card-img-top rounded-2"
                             alt="Album cover"
                           />
-                          <div class="card-body text-white">
-                            <h5 class="card-title text-truncate">
+                          <div class="card-body p-0 pt-3 text-white">
+                            <h5 class="card-title text-truncate fs-5">
                               Discover Weekly
                             </h5>
                             <p
-                              class="card-text text-truncate grey-font fw-bold"
+                              class="card-text text-truncate-2 grey-font"
                             >
                               II tuo mixtape settimanale di musica...
                             </p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-4 col-lg-3 col-xl-2">
+                      <div class="col-4 col-lg-3 col-xl-2 rounded-3">
                         <div class="card border-0 p-1 p-sm-2 p-md-3">
                           <img
                             src="./assets/img/cd-cover.jpg"
                             class="card-img-top rounded-2"
                             alt="Album cover"
                           />
-                          <div class="card-body text-white">
-                            <h5 class="card-title text-truncate">
+                          <div class="card-body p-0 pt-3 text-white">
+                            <h5 class="card-title text-truncate fs-5">
                               Discover Weekly
                             </h5>
                             <p
-                              class="card-text text-truncate grey-font fw-bold"
+                              class="card-text text-truncate-2 grey-font"
                             >
                               II tuo mixtape settimanale di musica...
                             </p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-4 col-lg-3 col-xl-2">
+                      <div class="col-4 col-lg-3 col-xl-2 rounded-3">
                         <div class="card border-0 p-1 p-sm-2 p-md-3">
                           <img
                             src="./assets/img/cd-cover.jpg"
                             class="card-img-top rounded-2"
                             alt="Album cover"
                           />
-                          <div class="card-body text-white">
-                            <h5 class="card-title text-truncate">
+                          <div class="card-body p-0 pt-3 text-white">
+                            <h5 class="card-title text-truncate fs-5">
                               Discover Weekly
                             </h5>
                             <p
-                              class="card-text text-truncate grey-font fw-bold"
+                              class="card-text text-truncate-2 grey-font"
                             >
                               II tuo mixtape settimanale di musica...
                             </p>
@@ -1185,6 +1261,638 @@
           </div>
         </div>
       </main>
+
+      <aside id="right-aside" class="rounded-3 d-none">
+        <div class="right-aside-inner flex-column h-100 gap-2">
+          <div
+            id="right-aside-navbar-header"
+            class="d-flex align-items-center justify-content-between py-3 px-3 gap-3 grey-font"
+          >
+            <span class="text-white fw-bold">Friend Activity</span>
+            <div class="right-aside-header-btns d-flex gap-3">
+              <button
+                id="add-friend"
+                type="button"
+                aria-hidden="false"
+                aria-label="Add Friends"
+                class="text-secondary rounded-5 d-flex align-items-center justify-content-center bg-transparent"
+              >
+                <svg
+                  data-encore-id="icon"
+                  role="img"
+                  aria-hidden="true"
+                  viewBox="0 0 16 16"
+                  class="w-16px currentcolor"
+                >
+                  <path
+                    d="M4.765 1.423c-.42.459-.713.992-.903 1.554-.144.421-.264 1.173-.22 1.894.077 1.321.638 2.408 1.399 3.316v.002l.083.098c.611.293 1.16.696 1.621 1.183a2.244 2.244 0 0 0-.426-2.092l-.127-.153-.002-.001c-.612-.73-.997-1.52-1.051-2.442-.032-.54.066-1.097.143-1.323a2.85 2.85 0 0 1 .589-1.022 2.888 2.888 0 0 1 4.258 0c.261.284.456.628.59 1.022.076.226.175.783.143 1.323-.055.921-.44 1.712-1.052 2.442l-.002.001-.127.153a2.25 2.25 0 0 0 .603 3.39l2.209 1.275a3.248 3.248 0 0 1 1.605 2.457h-5.99a5.466 5.466 0 0 1-.594 1.5h8.259l-.184-1.665a4.75 4.75 0 0 0-2.346-3.591l-2.209-1.275a.75.75 0 0 1-.201-1.13l.126-.152h.001c.76-.909 1.32-1.995 1.399-3.316.043-.721-.077-1.473-.22-1.894a4.46 4.46 0 0 0-.644-1.24v-.002h-.002a4.388 4.388 0 0 0-6.728-.312zM2 12.5v-2h1.5v2h2V14h-2v2H2v-2H0v-1.5h2z"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                id="close-friends-tab"
+                type="button"
+                aria-hidden="false"
+                aria-label="Close"
+                class="text-secondary rounded-5 d-flex align-items-center justify-content-center bg-transparent"
+              >
+                <svg
+                  data-encore-id="icon"
+                  role="img"
+                  aria-hidden="true"
+                  viewBox="0 0 16 16"
+                  class="w-16px currentcolor"
+                >
+                  <path
+                    d="M2.47 2.47a.75.75 0 0 1 1.06 0L8 6.94l4.47-4.47a.75.75 0 1 1 1.06 1.06L9.06 8l4.47 4.47a.75.75 0 1 1-1.06 1.06L8 9.06l-4.47 4.47a.75.75 0 0 1-1.06-1.06L6.94 8 2.47 3.53a.75.75 0 0 1 0-1.06Z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div
+            id="right-aside-body"
+            class="d-flex flex-column rounded-bottom h-100"
+          >
+            <div
+              class="right-aside-body-inner d-flex flex-column align-items-center py-3 px-3 gap-4 grey-font"
+            >
+              <div class="friend-card d-flex w-100">
+                <div class="img-cover me-3">
+                  <img
+                    src="./assets/img/users-img/Alessandro Anghebn.webp"
+                    alt="User profile image"
+                    class="rounded-5 h-75"
+                  />
+                </div>
+                <div class="friend-listening lh-md ms-auto w-100">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <a
+                      href="#"
+                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                    >
+                      Alessandro Angheben
+                    </a>
+                    <span class="fs-08 grey-font">Now</span>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                    >
+                      I'll be Waiting•Lenny Kravitz
+                    </a>
+                  </div>
+                  <div
+                    class="friend-album-title fs-08 d-flex align-items-center"
+                  >
+                    <svg
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      data-testid="album"
+                      class="w-10px currentcolor me-1"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                      ></path>
+                      <path
+                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                      ></path>
+                    </svg>
+                    <a href="#" class="grey-font"
+                      >It Is Time For A Love Revolution</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="friend-card d-flex w-100">
+                <div class="img-cover me-3">
+                  <img
+                    src="./assets/img/users-img/Alessandro Anghebn.webp"
+                    alt="User profile image"
+                    class="rounded-5 h-75"
+                  />
+                </div>
+                <div class="friend-listening lh-md ms-auto w-100">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <a
+                      href="#"
+                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                    >
+                      Alessandro Angheben
+                    </a>
+                    <span class="fs-08 grey-font">Now</span>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                    >
+                      I'll be Waiting•Lenny Kravitz
+                    </a>
+                  </div>
+                  <div
+                    class="friend-album-title fs-08 d-flex align-items-center"
+                  >
+                    <svg
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      data-testid="album"
+                      class="w-10px currentcolor me-1"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                      ></path>
+                      <path
+                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                      ></path>
+                    </svg>
+                    <a href="#" class="grey-font"
+                      >It Is Time For A Love Revolution</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="friend-card d-flex w-100">
+                <div class="img-cover me-3">
+                  <img
+                    src="./assets/img/users-img/Alessandro Anghebn.webp"
+                    alt="User profile image"
+                    class="rounded-5 h-75"
+                  />
+                </div>
+                <div class="friend-listening lh-md ms-auto w-100">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <a
+                      href="#"
+                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                    >
+                      Alessandro Angheben
+                    </a>
+                    <span class="fs-08 grey-font">Now</span>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                    >
+                      I'll be Waiting•Lenny Kravitz
+                    </a>
+                  </div>
+                  <div
+                    class="friend-album-title fs-08 d-flex align-items-center"
+                  >
+                    <svg
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      data-testid="album"
+                      class="w-10px currentcolor me-1"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                      ></path>
+                      <path
+                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                      ></path>
+                    </svg>
+                    <a href="#" class="grey-font"
+                      >It Is Time For A Love Revolution</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="friend-card d-flex w-100">
+                <div class="img-cover me-3">
+                  <img
+                    src="./assets/img/users-img/Alessandro Anghebn.webp"
+                    alt="User profile image"
+                    class="rounded-5 h-75"
+                  />
+                </div>
+                <div class="friend-listening lh-md ms-auto w-100">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <a
+                      href="#"
+                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                    >
+                      Alessandro Angheben
+                    </a>
+                    <span class="fs-08 grey-font">Now</span>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                    >
+                      I'll be Waiting•Lenny Kravitz
+                    </a>
+                  </div>
+                  <div
+                    class="friend-album-title fs-08 d-flex align-items-center"
+                  >
+                    <svg
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      data-testid="album"
+                      class="w-10px currentcolor me-1"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                      ></path>
+                      <path
+                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                      ></path>
+                    </svg>
+                    <a href="#" class="grey-font"
+                      >It Is Time For A Love Revolution</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="friend-card d-flex w-100">
+                <div class="img-cover me-3">
+                  <img
+                    src="./assets/img/users-img/Alessandro Anghebn.webp"
+                    alt="User profile image"
+                    class="rounded-5 h-75"
+                  />
+                </div>
+                <div class="friend-listening lh-md ms-auto w-100">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <a
+                      href="#"
+                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                    >
+                      Alessandro Angheben
+                    </a>
+                    <span class="fs-08 grey-font">Now</span>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                    >
+                      I'll be Waiting•Lenny Kravitz
+                    </a>
+                  </div>
+                  <div
+                    class="friend-album-title fs-08 d-flex align-items-center"
+                  >
+                    <svg
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      data-testid="album"
+                      class="w-10px currentcolor me-1"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                      ></path>
+                      <path
+                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                      ></path>
+                    </svg>
+                    <a href="#" class="grey-font"
+                      >It Is Time For A Love Revolution</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="friend-card d-flex w-100">
+                <div class="img-cover me-3">
+                  <img
+                    src="./assets/img/users-img/Alessandro Anghebn.webp"
+                    alt="User profile image"
+                    class="rounded-5 h-75"
+                  />
+                </div>
+                <div class="friend-listening lh-md ms-auto w-100">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <a
+                      href="#"
+                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                    >
+                      Alessandro Angheben
+                    </a>
+                    <span class="fs-08 grey-font">Now</span>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                    >
+                      I'll be Waiting•Lenny Kravitz
+                    </a>
+                  </div>
+                  <div
+                    class="friend-album-title fs-08 d-flex align-items-center"
+                  >
+                    <svg
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      data-testid="album"
+                      class="w-10px currentcolor me-1"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                      ></path>
+                      <path
+                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                      ></path>
+                    </svg>
+                    <a href="#" class="grey-font"
+                      >It Is Time For A Love Revolution</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="friend-card d-flex w-100">
+                <div class="img-cover me-3">
+                  <img
+                    src="./assets/img/users-img/Alessandro Anghebn.webp"
+                    alt="User profile image"
+                    class="rounded-5 h-75"
+                  />
+                </div>
+                <div class="friend-listening lh-md ms-auto w-100">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <a
+                      href="#"
+                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                    >
+                      Alessandro Angheben
+                    </a>
+                    <span class="fs-08 grey-font">Now</span>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                    >
+                      I'll be Waiting•Lenny Kravitz
+                    </a>
+                  </div>
+                  <div
+                    class="friend-album-title fs-08 d-flex align-items-center"
+                  >
+                    <svg
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      data-testid="album"
+                      class="w-10px currentcolor me-1"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                      ></path>
+                      <path
+                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                      ></path>
+                    </svg>
+                    <a href="#" class="grey-font"
+                      >It Is Time For A Love Revolution</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="friend-card d-flex w-100">
+                <div class="img-cover me-3">
+                  <img
+                    src="./assets/img/users-img/Alessandro Anghebn.webp"
+                    alt="User profile image"
+                    class="rounded-5 h-75"
+                  />
+                </div>
+                <div class="friend-listening lh-md ms-auto w-100">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <a
+                      href="#"
+                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                    >
+                      Alessandro Angheben
+                    </a>
+                    <span class="fs-08 grey-font">Now</span>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                    >
+                      I'll be Waiting•Lenny Kravitz
+                    </a>
+                  </div>
+                  <div
+                    class="friend-album-title fs-08 d-flex align-items-center"
+                  >
+                    <svg
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      data-testid="album"
+                      class="w-10px currentcolor me-1"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                      ></path>
+                      <path
+                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                      ></path>
+                    </svg>
+                    <a href="#" class="grey-font"
+                      >It Is Time For A Love Revolution</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="friend-card d-flex w-100">
+                <div class="img-cover me-3">
+                  <img
+                    src="./assets/img/users-img/Alessandro Anghebn.webp"
+                    alt="User profile image"
+                    class="rounded-5 h-75"
+                  />
+                </div>
+                <div class="friend-listening lh-md ms-auto w-100">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <a
+                      href="#"
+                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                    >
+                      Alessandro Angheben
+                    </a>
+                    <span class="fs-08 grey-font">Now</span>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                    >
+                      I'll be Waiting•Lenny Kravitz
+                    </a>
+                  </div>
+                  <div
+                    class="friend-album-title fs-08 d-flex align-items-center"
+                  >
+                    <svg
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      data-testid="album"
+                      class="w-10px currentcolor me-1"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                      ></path>
+                      <path
+                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                      ></path>
+                    </svg>
+                    <a href="#" class="grey-font"
+                      >It Is Time For A Love Revolution</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="friend-card d-flex w-100">
+                <div class="img-cover me-3">
+                  <img
+                    src="./assets/img/users-img/Alessandro Anghebn.webp"
+                    alt="User profile image"
+                    class="rounded-5 h-75"
+                  />
+                </div>
+                <div class="friend-listening lh-md ms-auto w-100">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <a
+                      href="#"
+                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                    >
+                      Alessandro Angheben
+                    </a>
+                    <span class="fs-08 grey-font">Now</span>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                    >
+                      I'll be Waiting•Lenny Kravitz
+                    </a>
+                  </div>
+                  <div
+                    class="friend-album-title fs-08 d-flex align-items-center"
+                  >
+                    <svg
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      data-testid="album"
+                      class="w-10px currentcolor me-1"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                      ></path>
+                      <path
+                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                      ></path>
+                    </svg>
+                    <a href="#" class="grey-font"
+                      >It Is Time For A Love Revolution</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="friend-card d-flex w-100">
+                <div class="img-cover me-3">
+                  <img
+                    src="./assets/img/users-img/Alessandro Anghebn.webp"
+                    alt="User profile image"
+                    class="rounded-5 h-75"
+                  />
+                </div>
+                <div class="friend-listening lh-md ms-auto w-100">
+                  <div
+                    class="d-flex w-100 align-items-center justify-content-between"
+                  >
+                    <a
+                      href="#"
+                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                    >
+                      Alessandro Angheben
+                    </a>
+                    <span class="fs-08 grey-font">Now</span>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                    >
+                      I'll be Waiting•Lenny Kravitz
+                    </a>
+                  </div>
+                  <div
+                    class="friend-album-title fs-08 d-flex align-items-center"
+                  >
+                    <svg
+                      data-encore-id="icon"
+                      role="img"
+                      aria-hidden="true"
+                      data-testid="album"
+                      class="w-10px currentcolor me-1"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                      ></path>
+                      <path
+                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                      ></path>
+                    </svg>
+                    <a href="#" class="grey-font"
+                      >It Is Time For A Love Revolution</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
 
       <footer
         id="footer"
@@ -1244,7 +1952,11 @@
               class="player-controls d-flex align-items-center justify-content-center gap-4 mb-1"
             >
               <div class="left-controls grey-font d-flex align-items-center">
-                <button id="shuffle" type="button" class="btn grey-font">
+                <button
+                  id="shuffle"
+                  type="button"
+                  class="btn rounded-5 grey-font"
+                >
                   <svg
                     data-encore-id="icon"
                     role="img"
@@ -1260,7 +1972,7 @@
                     ></path>
                   </svg>
                 </button>
-                <button id="back" type="button" class="btn grey-font">
+                <button id="back" type="button" class="btn rounded-5 grey-font">
                   <svg
                     data-encore-id="icon"
                     role="img"
@@ -1308,7 +2020,11 @@
               <div
                 class="right-controls left-controls grey-font d-flex align-items-center"
               >
-                <button id="forward" type="button" class="btn grey-font">
+                <button
+                  id="forward"
+                  type="button"
+                  class="btn rounded-5 grey-font"
+                >
                   <svg
                     data-encore-id="icon"
                     role="img"
@@ -1321,7 +2037,11 @@
                     ></path>
                   </svg>
                 </button>
-                <button id="repeat" type="button" class="btn grey-font">
+                <button
+                  id="repeat"
+                  type="button"
+                  class="btn rounded-5 grey-font"
+                >
                   <svg
                     data-encore-id="icon"
                     role="img"
@@ -1337,10 +2057,15 @@
               </div>
             </div>
             <div
-              class="song-track-range d-flex align-items-center gap-3 grey-font fs-07"
+              id="song-track-range"
+              class="d-flex align-items-center gap-3 grey-font fs-07"
             >
               <div id="elapsed">0:00</div>
-              <input type="range" class="form-range" id="track-range" />
+              <input
+                type="range"
+                class="styled-slider slider-progress"
+                id="track-range"
+              />
               <div class="track-duration">0:00</div>
             </div>
           </div>
@@ -1348,7 +2073,11 @@
             id="right-player-pane"
             class="d-flex align-items justify-content-end"
           >
-            <button id="listening-to" type="button" class="btn grey-font">
+            <button
+              id="listening-to"
+              type="button"
+              class="btn rounded-5 grey-font"
+            >
               <svg
                 data-encore-id="icon"
                 role="img"
@@ -1362,7 +2091,7 @@
                 ></path>
               </svg>
             </button>
-            <button id="lyrics" type="button" class="btn grey-font">
+            <button id="lyrics" type="button" class="btn rounded-5 grey-font">
               <svg
                 data-encore-id="icon"
                 role="img"
@@ -1375,7 +2104,7 @@
                 ></path>
               </svg>
             </button>
-            <button id="queue" type="button" class="btn grey-font">
+            <button id="queue" type="button" class="btn rounded-5 grey-font">
               <svg
                 data-encore-id="icon"
                 role="img"
@@ -1388,7 +2117,11 @@
                 ></path>
               </svg>
             </button>
-            <button id="listening-device" type="button" class="btn grey-font">
+            <button
+              id="listening-device"
+              type="button"
+              class="btn rounded-5 grey-font"
+            >
               <svg
                 data-encore-id="icon"
                 role="presentation"
@@ -1402,7 +2135,11 @@
               </svg>
             </button>
             <div class="volume-control d-flex align-items-center">
-              <button id="volume-range" type="button" class="btn grey-font">
+              <button
+                id="volume-toggler"
+                type="button"
+                class="btn rounded-5 grey-font"
+              >
                 <svg
                   data-encore-id="icon"
                   role="presentation"
@@ -1439,5 +2176,7 @@
     <!-- js scripts -->
     <script src="./javascript/time-based-greeter.js"></script>
     <script src="./javascript/header-color-shifter.js"></script>
+    <script src="./javascript/slider.js"></script>
+    <script src="./javascript/friend-activity-toggle.js"></script>
   </body>
-</html>
+</html3
