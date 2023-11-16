@@ -1,13 +1,13 @@
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "9854be37camsh23039a018f26824p142f52jsn217be1d9cce0",
+    "X-RapidAPI-Key": apiKey,
     "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
   }
 };
 
 async function generateCollections() {
-  const targetElementsToGenerate = 1; // Elementi da generare
+  const targetElementsToGenerate = 10; // Elementi da generare
   let generatedItems = 0; // Elementi generati
 
   const maxAttempts = 50; // Tentativi da effettuare in caso di errore
@@ -22,7 +22,7 @@ async function generateCollections() {
       let collectionMaxItems;
 
       // genera un artista o una playlist in base ai valori compresi fra 0 e 1
-      if (randomCollection < 0.3) {
+      if (randomCollection > 0) {
         collection = "artist";
         collectionUrl = "https://deezerdevs-deezer.p.rapidapi.com/artist/";
         collectionMaxItems = 1711306; // Artisti totali registrati nell'API di Deezer
@@ -52,9 +52,15 @@ async function generateCollections() {
       const output = await response.json();
 
       if (output.error && output.error.message === "no data") {
-        console.error("🔴 Nessun dato trovato, riprovare con un nuovo ID.");
+        console.error("🔴 ID vuoto.");
         attempt++;
         continue;
+      }
+
+      if (output.type === "artist") {
+        if (output.nb_fan < 99) {
+          continue;
+        }
       }
 
       createCollectionCard(output, collection, fullUrl);

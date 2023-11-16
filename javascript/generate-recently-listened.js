@@ -6,12 +6,12 @@ async function generateRecentlyListened() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "9854be37camsh23039a018f26824p142f52jsn217be1d9cce0",
+      "X-RapidAPI-Key": apiKey,
       "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
     }
   };
 
-  const targetElementsToGenerate = 1;
+  const targetElementsToGenerate = 8;
   let generatedItems = 0;
   const maxAttempts = 50;
   let attempt = 0;
@@ -23,7 +23,7 @@ async function generateRecentlyListened() {
       let collectionUrl;
       let collectionMaxItems;
 
-      if (randomCollection < 0.3) {
+      if (randomCollection > 0) {
         collection = "artist";
         collectionUrl = "https://deezerdevs-deezer.p.rapidapi.com/artist/";
         collectionMaxItems = 1711306;
