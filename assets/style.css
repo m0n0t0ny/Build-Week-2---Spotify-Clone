@@ -165,6 +165,10 @@ img {
   height: 40px;
 }
 
+.h-33 {
+  height: 33%;
+}
+
 .fs-07 {
   font-size: 0.7rem;
 }
@@ -262,14 +266,18 @@ img {
 }
 
 .cover-container {
+  width: 46px;
   height: 46px;
 }
 
 .lg-cover-container {
+  width: 128px;
   height: 128px;
 }
 
-.rounded-6
+#dynamic-bg {
+  box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.25);
+}
 
 /* ! ---------- RIGHT-ASIDE ---------- */
 
@@ -278,13 +286,13 @@ a:hover {
   color: white;
 }
 
-#right-aside {
+/* #right-aside {
   overflow: hidden;
   width: 280px;
   background-color: black;
-}
+} */
 
-#right-aside-navbar-header {
+/* #right-aside-navbar-header {
   background-color: #121212;
 }
 
@@ -302,39 +310,28 @@ a:hover {
   font-family: "CircularBold", sans-serif;
 }
 
-#right-aside-body-categories-inner {
+.right-aside-body-inner {
   overflow-x: scroll;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
   white-space: nowrap;
-}
-#right-aside-body-categories-inner button {
-  background-color: #212529;
+} */
+
+/* #right-aside {
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  white-space: nowrap;
+} */
+
+#right-aside {
+  height: calc(100vh - 93px);
+  overflow: auto;
 }
 
-#right-aside-body-categories-inner button:hover {
-  background-color: #424649;
-  color: white;
-}
-
-#right-aside-playlists-container {
-  height: calc(100vh - 355px);
-  overflow-y: auto;
-}
-
-.shadower {
-  width: 46px;
-  background: rgb(18, 18, 18);
-  background: linear-gradient(
-    90deg,
-    rgba(18, 18, 18, 0) 0%,
-    rgba(18, 18, 18, 1) 65%
-  );
-}
-
-.cover-container {
+/* .cover-container {
   height: 46px;
-}
+} */
 
 /* ! ---------- MAIN ---------- */
 
@@ -418,6 +415,11 @@ header {
     line-height: 1.25rem;
     background-color: #181818;
   }
+}
+
+.artist-verified-badge {
+  filter: invert(52%) sepia(94%) saturate(2955%) hue-rotate(195deg)
+    brightness(102%) contrast(91%);
 }
 
 /* ! ---------- FOOTER ---------- */

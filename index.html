@@ -78,6 +78,7 @@
             >
               <li class="navigation-icon w-100">
                 <a
+                  id="home-button"
                   class="grey-font fw-bold d-flex align-items-center gap-3"
                   href="#"
                 >
@@ -208,25 +209,25 @@
                       >
                         <button
                           type="button"
-                          class="btn rounded-circle py-1 grey-font fw-bold"
+                          class="btn rounded-5 py-1 grey-font fw-bold"
                         >
                           Playlist
                         </button>
                         <button
                           type="button"
-                          class="btn rounded-circle py-1 grey-font fw-bold"
+                          class="btn rounded-5 py-1 grey-font fw-bold"
                         >
                           Artisti
                         </button>
                         <button
                           type="button"
-                          class="btn rounded-circle py-1 grey-font fw-bold"
+                          class="btn rounded-5 py-1 grey-font fw-bold"
                         >
                           Album
                         </button>
                         <button
                           type="button"
-                          class="btn rounded-circle py-1 grey-font fw-bold"
+                          class="btn rounded-5 py-1 grey-font fw-bold"
                         >
                           Podcast e show
                         </button>
@@ -266,7 +267,7 @@
                   <a
                     href="#"
                     id="left-aside-body-main-inner-header-recent-search"
-                    class="grey-font"
+                    class="grey-font text-truncate"
                   >
                     <svg
                       data-encore-id="icon"
@@ -350,7 +351,11 @@
         </nav>
       </aside>
 
-      <main id="main" class="rounded-3 p-0">
+      <main id="main" class="rounded-3 p-0 position-relative">
+        <div
+          id="dynamic-bg"
+          class="w-100 h-33 top-0 position-absolute d-flex align-items-end"
+        ></div>
         <header
           id="main-header"
           class="d-none d-sm-flex align-items-center rounded-3 p-1 p-sm-2 p-md-3 gap-2 bg-transparent position-sticky top-0 start-0 end-0 z-3"
@@ -392,13 +397,13 @@
           <button
             type="button"
             id="explore-premium-button"
-            class="d-none d-md-flex align-items-center justify-content-center nav-link text-bg-light bg-white rounded-circle px-3"
+            class="d-none d-md-flex align-items-center justify-content-center nav-link text-bg-light bg-white rounded-5 px-3"
           >
             Esplora Premium
           </button>
           <button
             id="install-app"
-            class="d-none nav-link text-white bi bi-arrow-down-circle w-auto rounded-circle px-3 d-md-flex align-items-center justify-content-center gap-2"
+            class="d-none nav-link text-white bi bi-arrow-down-circle w-auto rounded-5 px-3 d-md-flex align-items-center justify-content-center gap-2"
           >
             Installa app
           </button>
@@ -440,7 +445,7 @@
             class="bi bi-person-circle grey-font fw-bold rounded-circle d-flex align-items-center justify-content-center"
           ></button>
         </header>
-        <div id="inner-main" class="p-1 pt-0 p-sm-2 pt-sm-0 p-md-3 pt-md-0">
+        <div id="inner-main" class="p-1 pt-0 p-sm-2 pt-sm-0 p-md-3 pt-md-1">
           <div id="main-body">
             <div id="inner-main-body" class="overflow-hidden">
               <section id="home-section" class="d-flex flex-column">
@@ -461,7 +466,7 @@
                         <button
                           id="whats-new-btn"
                           type="button"
-                          class="grey-font fw-bold rounded-circle d-flex align-items-center justify-content-center"
+                          class="grey-font fw-bold rounded-5 d-flex align-items-center justify-content-center"
                         >
                           <svg
                             data-encore-id="icon"
@@ -481,12 +486,12 @@
                           type="button"
                           aria-hidden="true"
                           aria-label="History"
-                          class="bi bi-clock-history grey-font fw-bold rounded-circle fs-2"
+                          class="bi bi-clock-history grey-font fw-bold rounded-5 fs-2"
                         ></button>
                         <button
                           id="settings-btn"
                           type="button"
-                          class="grey-font fw-bold rounded-circle d-flex align-items-center justify-content-center"
+                          class="grey-font fw-bold rounded-5 d-flex align-items-center justify-content-center"
                         >
                           <svg
                             data-encore-id="icon"
@@ -913,20 +918,20 @@
         </div>
       </main>
 
-      <aside id="right-aside" class="rounded-3 d-none">
-        <div class="right-aside-inner flex-column h-100 gap-2">
+      <aside id="right-aside" class="rounded-3 d-none w-100 m-0 p-0 bg-12">
+        <div id="right-aside-inner" class="m-0 p-0">
           <div
             id="right-aside-navbar-header"
-            class="d-flex align-items-center justify-content-between py-3 px-3 gap-3 grey-font"
+            class="d-flex align-items-center justify-content-between grey-font rounded-top m-0 p-3"
           >
-            <span class="text-white fw-bold">Friend Activity</span>
-            <div class="right-aside-header-btns d-flex gap-3">
+            <div class="text-white fw-bold">Friends Activity</div>
+            <div class="right-aside-header-btns d-flex m-0 p-0 gap-3">
               <button
                 id="add-friend"
                 type="button"
                 aria-hidden="false"
                 aria-label="Add Friends"
-                class="text-secondary rounded-circle d-flex align-items-center justify-content-center bg-transparent"
+                class="grey-font rounded-5 d-flex align-items-center justify-content-center bg-transparent"
               >
                 <svg
                   data-encore-id="icon"
@@ -945,598 +950,719 @@
                 type="button"
                 aria-hidden="false"
                 aria-label="Close"
-                class="text-secondary rounded-circle d-flex align-items-center justify-content-center bg-transparent"
+                class="grey-font rounded-circle d-flex align-items-center justify-content-center bg-transparent"
               >
-                <svg
-                  data-encore-id="icon"
-                  role="img"
+                <span
                   aria-hidden="true"
-                  viewBox="0 0 16 16"
-                  class="w-16px currentcolor"
-                >
-                  <path
-                    d="M2.47 2.47a.75.75 0 0 1 1.06 0L8 6.94l4.47-4.47a.75.75 0 1 1 1.06 1.06L9.06 8l4.47 4.47a.75.75 0 1 1-1.06 1.06L8 9.06l-4.47 4.47a.75.75 0 0 1-1.06-1.06L6.94 8 2.47 3.53a.75.75 0 0 1 0-1.06Z"
-                  ></path>
-                </svg>
+                  class="IconWrapper__Wrapper-sc-16usrgb-0 hYdsxw"
+                  ><svg
+                    data-encore-id="icon"
+                    role="img"
+                    aria-hidden="true"
+                    viewBox="0 0 16 16"
+                    class="w-16px currentcolor"
+                  >
+                    <path
+                      d="M2.47 2.47a.75.75 0 0 1 1.06 0L8 6.94l4.47-4.47a.75.75 0 1 1 1.06 1.06L9.06 8l4.47 4.47a.75.75 0 1 1-1.06 1.06L8 9.06l-4.47 4.47a.75.75 0 0 1-1.06-1.06L6.94 8 2.47 3.53a.75.75 0 0 1 0-1.06Z"
+                    ></path></svg
+                ></span>
               </button>
             </div>
           </div>
           <div
             id="right-aside-body"
-            class="d-flex flex-column rounded-bottom h-100"
+            class="d-flex flex-column rounded-bottom h-100 w-100 p-3 pe-4"
           >
             <div
-              class="right-aside-body-inner d-flex flex-column align-items-center py-3 px-3 gap-4 grey-font"
+              id="right-aside-body-inner"
+              class="row d-flex flex-column flex-nowrap w-100"
             >
-              <div class="friend-card d-flex w-100">
-                <div class="img-cover me-3">
-                  <img
-                    src="./assets/img/users-img/Alessandro Anghebn.webp"
-                    alt="User profile image"
-                    class="rounded-circle h-75"
-                  />
-                </div>
-                <div class="friend-listening lh-md ms-auto w-100">
-                  <div
-                    class="d-flex w-100 align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
-                    >
-                      Alessandro Angheben
-                    </a>
-                    <span class="fs-08 grey-font">Now</span>
+              <div
+                class="col-12 d-flex flex-column rounded-2 w-100 h-100 mb-2 gap-3"
+              >
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
                   </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
                     >
-                      I'll be Waiting•Lenny Kravitz
-                    </a>
-                  </div>
-                  <div
-                    class="friend-album-title fs-08 d-flex align-items-center"
-                  >
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      data-testid="album"
-                      class="w-10px currentcolor me-1"
-                      viewBox="0 0 16 16"
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span id="friends-when" class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <div
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        <a href="#" id="friend-artist-title" class="grey-font"
+                          >I'll be Waiting
+                        </a>
+                        &nbsp;•&nbsp;
+                        <a href="#" id="friend-artist-name" class="grey-font">
+                          Lenny Kravitz</a
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
                     >
-                      <path
-                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                      ></path>
-                      <path
-                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
-                      ></path>
-                    </svg>
-                    <a href="#" class="grey-font"
-                      >It Is Time For A Love Revolution</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="friend-card d-flex w-100">
-                <div class="img-cover me-3">
-                  <img
-                    src="./assets/img/users-img/Alessandro Anghebn.webp"
-                    alt="User profile image"
-                    class="rounded-circle h-75"
-                  />
-                </div>
-                <div class="friend-listening lh-md ms-auto w-100">
-                  <div
-                    class="d-flex w-100 align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
-                    >
-                      Alessandro Angheben
-                    </a>
-                    <span class="fs-08 grey-font">Now</span>
-                  </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
-                    >
-                      I'll be Waiting•Lenny Kravitz
-                    </a>
-                  </div>
-                  <div
-                    class="friend-album-title fs-08 d-flex align-items-center"
-                  >
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      data-testid="album"
-                      class="w-10px currentcolor me-1"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                      ></path>
-                      <path
-                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
-                      ></path>
-                    </svg>
-                    <a href="#" class="grey-font"
-                      >It Is Time For A Love Revolution</a
-                    >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a
+                        id="friend-track-title"
+                        href="#"
+                        class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="friend-card d-flex w-100">
-                <div class="img-cover me-3">
-                  <img
-                    src="./assets/img/users-img/Alessandro Anghebn.webp"
-                    alt="User profile image"
-                    class="rounded-circle h-75"
-                  />
-                </div>
-                <div class="friend-listening lh-md ms-auto w-100">
-                  <div
-                    class="d-flex w-100 align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
-                    >
-                      Alessandro Angheben
-                    </a>
-                    <span class="fs-08 grey-font">Now</span>
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
                   </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
                     >
-                      I'll be Waiting•Lenny Kravitz
-                    </a>
-                  </div>
-                  <div
-                    class="friend-album-title fs-08 d-flex align-items-center"
-                  >
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      data-testid="album"
-                      class="w-10px currentcolor me-1"
-                      viewBox="0 0 16 16"
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        I'll be Waiting•Lenny Kravitz
+                      </a>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
                     >
-                      <path
-                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                      ></path>
-                      <path
-                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
-                      ></path>
-                    </svg>
-                    <a href="#" class="grey-font"
-                      >It Is Time For A Love Revolution</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="friend-card d-flex w-100">
-                <div class="img-cover me-3">
-                  <img
-                    src="./assets/img/users-img/Alessandro Anghebn.webp"
-                    alt="User profile image"
-                    class="rounded-circle h-75"
-                  />
-                </div>
-                <div class="friend-listening lh-md ms-auto w-100">
-                  <div
-                    class="d-flex w-100 align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
-                    >
-                      Alessandro Angheben
-                    </a>
-                    <span class="fs-08 grey-font">Now</span>
-                  </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
-                    >
-                      I'll be Waiting•Lenny Kravitz
-                    </a>
-                  </div>
-                  <div
-                    class="friend-album-title fs-08 d-flex align-items-center"
-                  >
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      data-testid="album"
-                      class="w-10px currentcolor me-1"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                      ></path>
-                      <path
-                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
-                      ></path>
-                    </svg>
-                    <a href="#" class="grey-font"
-                      >It Is Time For A Love Revolution</a
-                    >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a href="#" class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="friend-card d-flex w-100">
-                <div class="img-cover me-3">
-                  <img
-                    src="./assets/img/users-img/Alessandro Anghebn.webp"
-                    alt="User profile image"
-                    class="rounded-circle h-75"
-                  />
-                </div>
-                <div class="friend-listening lh-md ms-auto w-100">
-                  <div
-                    class="d-flex w-100 align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
-                    >
-                      Alessandro Angheben
-                    </a>
-                    <span class="fs-08 grey-font">Now</span>
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
                   </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
                     >
-                      I'll be Waiting•Lenny Kravitz
-                    </a>
-                  </div>
-                  <div
-                    class="friend-album-title fs-08 d-flex align-items-center"
-                  >
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      data-testid="album"
-                      class="w-10px currentcolor me-1"
-                      viewBox="0 0 16 16"
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        I'll be Waiting•Lenny Kravitz
+                      </a>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
                     >
-                      <path
-                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                      ></path>
-                      <path
-                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
-                      ></path>
-                    </svg>
-                    <a href="#" class="grey-font"
-                      >It Is Time For A Love Revolution</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="friend-card d-flex w-100">
-                <div class="img-cover me-3">
-                  <img
-                    src="./assets/img/users-img/Alessandro Anghebn.webp"
-                    alt="User profile image"
-                    class="rounded-circle h-75"
-                  />
-                </div>
-                <div class="friend-listening lh-md ms-auto w-100">
-                  <div
-                    class="d-flex w-100 align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
-                    >
-                      Alessandro Angheben
-                    </a>
-                    <span class="fs-08 grey-font">Now</span>
-                  </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
-                    >
-                      I'll be Waiting•Lenny Kravitz
-                    </a>
-                  </div>
-                  <div
-                    class="friend-album-title fs-08 d-flex align-items-center"
-                  >
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      data-testid="album"
-                      class="w-10px currentcolor me-1"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                      ></path>
-                      <path
-                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
-                      ></path>
-                    </svg>
-                    <a href="#" class="grey-font"
-                      >It Is Time For A Love Revolution</a
-                    >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a href="#" class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="friend-card d-flex w-100">
-                <div class="img-cover me-3">
-                  <img
-                    src="./assets/img/users-img/Alessandro Anghebn.webp"
-                    alt="User profile image"
-                    class="rounded-circle h-75"
-                  />
-                </div>
-                <div class="friend-listening lh-md ms-auto w-100">
-                  <div
-                    class="d-flex w-100 align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
-                    >
-                      Alessandro Angheben
-                    </a>
-                    <span class="fs-08 grey-font">Now</span>
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
                   </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
                     >
-                      I'll be Waiting•Lenny Kravitz
-                    </a>
-                  </div>
-                  <div
-                    class="friend-album-title fs-08 d-flex align-items-center"
-                  >
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      data-testid="album"
-                      class="w-10px currentcolor me-1"
-                      viewBox="0 0 16 16"
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        I'll be Waiting•Lenny Kravitz
+                      </a>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
                     >
-                      <path
-                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                      ></path>
-                      <path
-                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
-                      ></path>
-                    </svg>
-                    <a href="#" class="grey-font"
-                      >It Is Time For A Love Revolution</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="friend-card d-flex w-100">
-                <div class="img-cover me-3">
-                  <img
-                    src="./assets/img/users-img/Alessandro Anghebn.webp"
-                    alt="User profile image"
-                    class="rounded-circle h-75"
-                  />
-                </div>
-                <div class="friend-listening lh-md ms-auto w-100">
-                  <div
-                    class="d-flex w-100 align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
-                    >
-                      Alessandro Angheben
-                    </a>
-                    <span class="fs-08 grey-font">Now</span>
-                  </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
-                    >
-                      I'll be Waiting•Lenny Kravitz
-                    </a>
-                  </div>
-                  <div
-                    class="friend-album-title fs-08 d-flex align-items-center"
-                  >
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      data-testid="album"
-                      class="w-10px currentcolor me-1"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                      ></path>
-                      <path
-                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
-                      ></path>
-                    </svg>
-                    <a href="#" class="grey-font"
-                      >It Is Time For A Love Revolution</a
-                    >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a href="#" class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="friend-card d-flex w-100">
-                <div class="img-cover me-3">
-                  <img
-                    src="./assets/img/users-img/Alessandro Anghebn.webp"
-                    alt="User profile image"
-                    class="rounded-circle h-75"
-                  />
-                </div>
-                <div class="friend-listening lh-md ms-auto w-100">
-                  <div
-                    class="d-flex w-100 align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
-                    >
-                      Alessandro Angheben
-                    </a>
-                    <span class="fs-08 grey-font">Now</span>
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
                   </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
                     >
-                      I'll be Waiting•Lenny Kravitz
-                    </a>
-                  </div>
-                  <div
-                    class="friend-album-title fs-08 d-flex align-items-center"
-                  >
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      data-testid="album"
-                      class="w-10px currentcolor me-1"
-                      viewBox="0 0 16 16"
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        I'll be Waiting•Lenny Kravitz
+                      </a>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
                     >
-                      <path
-                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                      ></path>
-                      <path
-                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
-                      ></path>
-                    </svg>
-                    <a href="#" class="grey-font"
-                      >It Is Time For A Love Revolution</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="friend-card d-flex w-100">
-                <div class="img-cover me-3">
-                  <img
-                    src="./assets/img/users-img/Alessandro Anghebn.webp"
-                    alt="User profile image"
-                    class="rounded-circle h-75"
-                  />
-                </div>
-                <div class="friend-listening lh-md ms-auto w-100">
-                  <div
-                    class="d-flex w-100 align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
-                    >
-                      Alessandro Angheben
-                    </a>
-                    <span class="fs-08 grey-font">Now</span>
-                  </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
-                    >
-                      I'll be Waiting•Lenny Kravitz
-                    </a>
-                  </div>
-                  <div
-                    class="friend-album-title fs-08 d-flex align-items-center"
-                  >
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      data-testid="album"
-                      class="w-10px currentcolor me-1"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                      ></path>
-                      <path
-                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
-                      ></path>
-                    </svg>
-                    <a href="#" class="grey-font"
-                      >It Is Time For A Love Revolution</a
-                    >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a href="#" class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="friend-card d-flex w-100">
-                <div class="img-cover me-3">
-                  <img
-                    src="./assets/img/users-img/Alessandro Anghebn.webp"
-                    alt="User profile image"
-                    class="rounded-circle h-75"
-                  />
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
+                  </div>
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
+                    >
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        I'll be Waiting•Lenny Kravitz
+                      </a>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
+                    >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a href="#" class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
+                  </div>
                 </div>
-                <div class="friend-listening lh-md ms-auto w-100">
-                  <div
-                    class="d-flex w-100 align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
-                    >
-                      Alessandro Angheben
-                    </a>
-                    <span class="fs-08 grey-font">Now</span>
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
                   </div>
-                  <div>
-                    <a
-                      href="#"
-                      class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
                     >
-                      I'll be Waiting•Lenny Kravitz
-                    </a>
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        I'll be Waiting•Lenny Kravitz
+                      </a>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
+                    >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a href="#" class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
                   </div>
-                  <div
-                    class="friend-album-title fs-08 d-flex align-items-center"
-                  >
-                    <svg
-                      data-encore-id="icon"
-                      role="img"
-                      aria-hidden="true"
-                      data-testid="album"
-                      class="w-10px currentcolor me-1"
-                      viewBox="0 0 16 16"
+                </div>
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
+                  </div>
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
                     >
-                      <path
-                        d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                      ></path>
-                      <path
-                        d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
-                      ></path>
-                    </svg>
-                    <a href="#" class="grey-font"
-                      >It Is Time For A Love Revolution</a
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        I'll be Waiting•Lenny Kravitz
+                      </a>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
                     >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a href="#" class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
+                  </div>
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
+                    >
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        I'll be Waiting•Lenny Kravitz
+                      </a>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
+                    >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a href="#" class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
+                  </div>
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
+                    >
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        I'll be Waiting•Lenny Kravitz
+                      </a>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
+                    >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a href="#" class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
+                  </div>
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
+                    >
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        I'll be Waiting•Lenny Kravitz
+                      </a>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
+                    >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a href="#" class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
+                  </div>
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
+                    >
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        I'll be Waiting•Lenny Kravitz
+                      </a>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
+                    >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a href="#" class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="friend-card d-flex w-100">
+                  <div class="img-cover me-3">
+                    <img
+                      src="./assets/img/users-img/Alessandro Anghebn.webp"
+                      alt="User profile image"
+                      class="rounded-5 h-75"
+                    />
+                  </div>
+                  <div class="friend-listening lh-md ms-auto w-100">
+                    <div
+                      class="d-flex w-100 align-items-center justify-content-between"
+                    >
+                      <a
+                        href="#"
+                        class="friend-name fs-08 fw-bold grey-font d-flex align-items-center"
+                      >
+                        Alessandro Angheben
+                      </a>
+                      <span class="fs-08 grey-font">Now</span>
+                    </div>
+                    <div>
+                      <a
+                        href="#"
+                        class="friend-song-title fs-08 grey-font d-flex align-items-center"
+                      >
+                        I'll be Waiting•Lenny Kravitz
+                      </a>
+                    </div>
+                    <div
+                      class="friend-album-title fs-08 d-flex align-items-center grey-font"
+                    >
+                      <svg
+                        data-encore-id="icon"
+                        role="img"
+                        aria-hidden="true"
+                        data-testid="album"
+                        class="w-10px currentcolor me-1"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                        ></path>
+                        <path
+                          d="M8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM5 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"
+                        ></path>
+                      </svg>
+                      <a href="#" class="grey-font text-truncate"
+                        >It Is Time For A Love Revolution</a
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1606,7 +1732,7 @@
                 <button
                   id="shuffle"
                   type="button"
-                  class="btn rounded-circle grey-font"
+                  class="btn rounded-5 grey-font"
                 >
                   <svg
                     data-encore-id="icon"
@@ -1623,11 +1749,7 @@
                     ></path>
                   </svg>
                 </button>
-                <button
-                  id="back"
-                  type="button"
-                  class="btn rounded-circle grey-font"
-                >
+                <button id="back" type="button" class="btn rounded-5 grey-font">
                   <svg
                     data-encore-id="icon"
                     role="img"
@@ -1646,7 +1768,7 @@
               >
                 <button
                   id="play-pause-button"
-                  class="bg-white rounded-circle p-2 w-32px d-flex align-content-center justify-content-center"
+                  class="bg-white rounded-5 p-2 w-32px d-flex align-content-center justify-content-center"
                 >
                   <svg
                     data-encore-id="icon"
@@ -1678,7 +1800,7 @@
                 <button
                   id="forward"
                   type="button"
-                  class="btn rounded-circle grey-font"
+                  class="btn rounded-5 grey-font"
                 >
                   <svg
                     data-encore-id="icon"
@@ -1695,7 +1817,7 @@
                 <button
                   id="repeat"
                   type="button"
-                  class="btn rounded-circle grey-font"
+                  class="btn rounded-5 grey-font"
                 >
                   <svg
                     data-encore-id="icon"
@@ -1731,7 +1853,7 @@
             <button
               id="listening-to"
               type="button"
-              class="btn rounded-circle grey-font"
+              class="btn rounded-5 grey-font"
             >
               <svg
                 data-encore-id="icon"
@@ -1746,11 +1868,7 @@
                 ></path>
               </svg>
             </button>
-            <button
-              id="lyrics"
-              type="button"
-              class="btn rounded-circle grey-font"
-            >
+            <button id="lyrics" type="button" class="btn rounded-5 grey-font">
               <svg
                 data-encore-id="icon"
                 role="img"
@@ -1763,11 +1881,7 @@
                 ></path>
               </svg>
             </button>
-            <button
-              id="queue"
-              type="button"
-              class="btn rounded-circle grey-font"
-            >
+            <button id="queue" type="button" class="btn rounded-5 grey-font">
               <svg
                 data-encore-id="icon"
                 role="img"
@@ -1783,7 +1897,7 @@
             <button
               id="listening-device"
               type="button"
-              class="btn rounded-circle grey-font"
+              class="btn rounded-5 grey-font"
             >
               <svg
                 data-encore-id="icon"
@@ -1801,7 +1915,7 @@
               <button
                 id="volume-toggler"
                 type="button"
-                class="btn rounded-circle grey-font"
+                class="btn rounded-5 grey-font"
               >
                 <svg
                   data-encore-id="icon"
@@ -1817,7 +1931,11 @@
                   ></path>
                 </svg>
               </button>
-              <input type="range" class="form-range" id="volume-range" />
+              <input
+                type="range"
+                class="styled-slider slider-progress"
+                id="track-range"
+              />
             </div>
           </div>
         </div>
@@ -1840,8 +1958,10 @@
     <script src="./javascript/time-based-greeter.js"></script>
     <script src="./javascript/header-color-shifter.js"></script>
     <script src="./javascript/slider.js"></script>
-    <script src="./javascript/friend-activity-toggle.js"></script>
-    <script src="./javascript/random-playlists.js"></script>
+    <script src="./javascript/friends-activity-toggle.js"></script>
+    <script src="./javascript/generate-collections.js"></script>
     <script src="./javascript/access-collection.js"></script>
+    <script src="./javascript/script.js"></script>
+    <script src="./javascript/friends-activity.js"></script>
   </body>
 </html>

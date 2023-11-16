@@ -7,10 +7,10 @@ const options = {
 };
 
 window.onload = async () => {
-  const targetElementsToGenerate = 5; // Elementi da generare
+  const targetElementsToGenerate = 3; // Elementi da generare
   let generatedItems = 0; // Elementi generati
 
-  const maxAttempts = 10; // Tentativi da effettuare in caso di errore
+  const maxAttempts = 50; // Tentativi da effettuare in caso di errore
   let attempt = 0; // Tentativi effettuati
 
   let collection = "";
@@ -57,7 +57,7 @@ window.onload = async () => {
         continue;
       }
 
-      createPlaylistCard(output, collection, fullUrl);
+      createCollectionCard(output, collection, fullUrl);
       generatedItems++;
       console.log(`🟢 Elemento ${generatedItems} generato con successo.`);
     } catch (error) {
@@ -77,7 +77,7 @@ const leftAsideCollectionsContainer = document.getElementById(
   "left-aside-collections-container"
 );
 
-function createPlaylistCard(output, collection, fullUrl) {
+function createCollectionCard(output, collection, fullUrl) {
   const col = document.createElement("div");
   col.className = "col-12 rounded-2 w-100 mb-2";
   leftAsideCollectionsContainer.appendChild(col);
