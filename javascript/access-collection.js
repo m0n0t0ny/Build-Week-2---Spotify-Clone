@@ -131,7 +131,7 @@ async function accessCollection(event) {
     // COLLECTION PLAYER
 
     const innerCollection = document.createElement("div");
-    innerCollection.classList("d-flex p-3 h-100 w-100 z-6");
+    innerCollection.classList = "d-flex p-3 h-100 w-100 z-6";
     innerHomeSection.appendChild(innerCollection);
 
     const innerCollectionPlayer = document.createElement("div");
@@ -141,7 +141,7 @@ async function accessCollection(event) {
 
     const playPauseButton = document.createElement("button");
     playPauseButton.type = "button";
-    playPauseButton.className("w-40px  spotigreen");
+    playPauseButton.className = "w-40px  spotigreen";
     playPauseButton.innerHTML = `<svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" class="w-32px currentcolor"><path d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"></path></svg>`;
     innerCollectionPlayer.appendChild(playPauseButton);
   } catch (error) {

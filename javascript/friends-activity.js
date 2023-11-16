@@ -44,7 +44,9 @@ imgFiles.forEach(async (imgFile) => {
       const imgSrc = imgDirectory + imgFile;
       const friendName = imgFile.replace(`/\.[^/.]+$/`, "");
       const friendSongTitle = output.title_short;
-      const friendArtistName = output.artist.name;
+      const friendArtistName = output.artist
+        ? output.artist.name
+        : "Unknown Artist";
       const friendArtistAlbum = output.album.title;
       const friendListeningTime = randomTime();
 

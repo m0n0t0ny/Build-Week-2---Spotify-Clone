@@ -7,7 +7,7 @@ const options = {
 };
 
 async function generateCollections() {
-  const targetElementsToGenerate = 4; // Elementi da generare
+  const targetElementsToGenerate = 1; // Elementi da generare
   let generatedItems = 0; // Elementi generati
 
   const maxAttempts = 50; // Tentativi da effettuare in caso di errore
