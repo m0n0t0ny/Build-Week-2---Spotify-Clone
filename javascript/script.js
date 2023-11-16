@@ -1,2 +1,4 @@
-// const homButton = document.getElementById("home-button");
-// homButton;
+const homeButton = document.getElementById("home-button");
+homeButton.addEventListener("click", generateCollections);
+
+function fetch4Home() {}

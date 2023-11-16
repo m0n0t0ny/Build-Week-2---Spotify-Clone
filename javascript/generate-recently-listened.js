@@ -1,18 +1,20 @@
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "6d9b0d1d96msh687029ace86e165p179be1jsnda071e179ac4",
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
-  }
+window.onload = () => {
+  generateRecentlyListened();
 };
 
-async function generateCollections() {
-  const targetElementsToGenerate = 4; // Elementi da generare
-  let generatedItems = 0; // Elementi generati
+async function generateRecentlyListened() {
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "6d9b0d1d96msh687029ace86e165p179be1jsnda071e179ac4",
+      "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
+    }
+  };
 
-  const maxAttempts = 50; // Tentativi da effettuare in caso di errore
-  let attempt = 0; // Tentativi effettuati
-
+  const targetElementsToGenerate = 1;
+  let generatedItems = 0;
+  const maxAttempts = 50;
+  let attempt = 0;
   let collection = "";
 
   while (attempt < maxAttempts && generatedItems < targetElementsToGenerate) {
@@ -21,15 +23,14 @@ async function generateCollections() {
       let collectionUrl;
       let collectionMaxItems;
 
-      // genera un artista o una playlist in base ai valori compresi fra 0 e 1
       if (randomCollection < 0.3) {
         collection = "artist";
         collectionUrl = "https://deezerdevs-deezer.p.rapidapi.com/artist/";
-        collectionMaxItems = 1711306; // Artisti totali registrati nell'API di Deezer
+        collectionMaxItems = 1711306;
       } else {
         collection = "playlist";
         collectionUrl = "https://deezerdevs-deezer.p.rapidapi.com/playlist/";
-        collectionMaxItems = 99999911; // Playlist totali registrate nell'API Deezer
+        collectionMaxItems = 99999911;
       }
 
       const randomElement = Math.floor(Math.random() * collectionMaxItems) + 1;
@@ -57,12 +58,13 @@ async function generateCollections() {
         continue;
       }
 
-      createCollectionCard(output, collection, fullUrl);
+      createPlaylistCard(output, fullUrl, collection);
       generatedItems++;
       console.log(`🟢 Elemento ${generatedItems} generato con successo.`);
     } catch (error) {
       console.error(`🔴 Errore durante il tentativo ${attempt + 1}:`, error);
       attempt++;
+      await new Promise((resolve) => setTimeout(resolve, 10000)); // Wait for 10 seconds before retrying
     }
   }
 
@@ -73,23 +75,19 @@ async function generateCollections() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  generateCollections();
-});
-
-const leftAsideCollectionsContainer = document.getElementById(
-  "left-aside-collections-container"
+const recentlyListenedInnerBody = document.getElementById(
+  "recently-listened-inner-body"
 );
 
-function createCollectionCard(output, collection, fullUrl) {
+function createPlaylistCard(output, fullUrl, collection) {
   const col = document.createElement("div");
-  col.className = "col-12 rounded-2 w-100 mb-2";
-  leftAsideCollectionsContainer.appendChild(col);
+  col.className =
+    "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 rounded-2 text-truncate";
+  recentlyListenedInnerBody.appendChild(col);
 
   const card = document.createElement("a");
   card.href = "#";
-  card.className =
-    "card d-flex flex-row align-items-center text-white ps-0 bg-transparent";
+  card.className = "card d-flex flex-row text-white ps-0";
   card.addEventListener("click", accessCollection);
   col.appendChild(card);
 
@@ -98,35 +96,20 @@ function createCollectionCard(output, collection, fullUrl) {
   cardIdUrl.innerText = `${fullUrl}`;
   card.appendChild(cardIdUrl);
 
-  const imgContainer = document.createElement("div");
-  imgContainer.className =
-    "img-container rounded-2 flex-shrink-0 cover-container d-flex align-items-center me-3";
-  card.appendChild(imgContainer);
-
   const albumCover = document.createElement("img");
   if (output.picture) {
-    albumCover.className =
-      collection === "artist"
-        ? "img-fluid w-100 img-container rounded-circle"
-        : "img-fluid w-100 img-container rounded-1";
+    albumCover.className = "img-fluid rounded-start w-48px";
     albumCover.src = output.picture;
-    imgContainer.appendChild(albumCover);
-  } else {
-    col.className = "d-none";
+    card.appendChild(albumCover);
   }
 
   const cardBody = document.createElement("div");
-  cardBody.className = "card-body d-flex flex-column p-0";
+  cardBody.className = "card-body p-0 ps-2 d-flex align-items-center";
   card.appendChild(cardBody);
 
-  const cardTitle = document.createElement("div");
-  cardTitle.className = "card-title text-truncate m-0 fs-6";
+  const cardTitle = document.createElement("h5");
+  cardTitle.className =
+    "card-title text-truncate-2 m-0 w-100 h-100 d-flex align-items-center";
   cardTitle.innerText = collection === "artist" ? output.name : output.title;
   cardBody.appendChild(cardTitle);
-
-  const cardType = document.createElement("div");
-  cardType.className = "card-title grey-font text-truncate m-0 fs-08";
-  cardType.innerText =
-    collection === "artist" ? "Artista" : `Playlist • ${output.creator.name}`;
-  cardBody.appendChild(cardType);
 }
