@@ -32,7 +32,7 @@ imgFiles.forEach(async (imgFile) => {
         method: "GET",
         headers: {
           "X-RapidAPI-Key":
-            "6d9b0d1d96msh687029ace86e165p179be1jsnda071e179ac4",
+            "9854be37camsh23039a018f26824p142f52jsn217be1d9cce0",
           "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
         }
       }
@@ -43,11 +43,15 @@ imgFiles.forEach(async (imgFile) => {
 
       const imgSrc = imgDirectory + imgFile;
       const friendName = imgFile.replace(`/\.[^/.]+$/`, "");
-      const friendSongTitle = output.title_short;
+      const friendSongTitle = output.title_short
+        ? output.title_short
+        : "Unknown Title";
       const friendArtistName = output.artist
         ? output.artist.name
         : "Unknown Artist";
-      const friendArtistAlbum = output.album.title;
+      const friendArtistAlbum = output.album
+        ? output.album.title
+        : "Unknown Album";
       const friendListeningTime = randomTime();
 
       const friendCard = document.createElement("div");

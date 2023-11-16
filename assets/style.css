@@ -438,8 +438,13 @@ header {
   }
 }
 
-/* @media screen and (min-width:1400px) {
-} */
+/* COLLECTION PAGE */
+
+/* OPEN COLLECTION PLAYER  */
+
+#play-pause-button {
+  background-color: #1ed760;
+}
 
 /* ! ---------- FOOTER ---------- */
 

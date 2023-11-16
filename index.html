@@ -351,10 +351,6 @@
       </aside>
 
       <main id="main" class="rounded-3 p-0 position-relative">
-        <div
-          id="dynamic-bg"
-          class="w-100 h-33 top-0 position-absolute d-flex align-items-end"
-        ></div>
         <header
           id="main-header"
           class="d-none d-sm-flex align-items-center rounded-3 p-1 p-sm-2 p-md-3 gap-2 bg-transparent position-sticky top-0 start-0 end-0 z-3"
@@ -444,8 +440,14 @@
             class="bi bi-person-circle grey-font fw-bold rounded-circle d-flex align-items-center justify-content-center"
           ></button>
         </header>
+
+        <div
+          id="dynamic-bg"
+          class="w-100 h-33 top-0 position-absolute d-flex align-items-end"
+        ></div>
+
         <div id="inner-main" class="p-1 pt-0 p-sm-2 pt-sm-0 p-md-3 pt-md-1">
-          <div id="main-body">
+          <div id="main-body" class="d-flex flex-column gap-5">
             <div id="inner-main-body" class="overflow-hidden">
               <section id="home-section" class="d-flex flex-column">
                 <div id="inner-home-section" class="d-flex flex-column">

@@ -305,9 +305,12 @@ homeButton.addEventListener("click", async function () {
     </div>
   </div>`;
 
-  const dynamicBg = document.getElementById("dynamicBg");
-  dynamicBg.classList.add("d-none");
-
+  await cleanDynamciBg();
   await timeBasedGreeting();
   await generateRecentlyListened();
 });
+
+async function cleanDynamciBg() {
+  const dynamicBg = document.getElementById("dynamic-bg");
+  dynamicBg.innerHTML = "";
+}
