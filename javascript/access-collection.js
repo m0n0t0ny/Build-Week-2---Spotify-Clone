@@ -104,7 +104,7 @@ async function accessCollection(event) {
         albumCover.className = "img-fluid w-100 rounded-1";
         playlistCover.appendChild(albumCover);
       } else {
-        playlistCover.style.display = "none";
+        playlistCover.classList.add("d-none");
       }
 
       const playlistInfo = document.createElement("div");
@@ -228,9 +228,7 @@ async function accessCollection(event) {
   }
 }
 
-async function pullPlaylistTracks(artistId) {
-  console.log(`-> Started pulling artist top tracks with id: ${artistId}`);
-}
+// ! ---------- ARTIST TOP TRACKS ----------
 
 async function pullArtistTopTracks(artistId) {
   console.log(`-> Started pulling artist top tracks with id: ${artistId}`);
@@ -314,7 +312,118 @@ async function pullArtistTopTracks(artistId) {
     }
     const topTracks = await getTopTracks();
     renderTopTracks(topTracks);
+    pullArtistAlbums(artistId);
   } catch (error) {
     console.error("🔴 Error fetching top tracks:", error);
+  }
+}
+
+// ! ---------- DISCOGRAFIA ----------
+
+async function pullArtistAlbums(artistId) {
+  console.log(`-> Started pulling artist top tracks with id: ${artistId}`);
+
+  let albumsPerPage = 5;
+  let currentPage = 1;
+  let totalAlbums;
+  const displayedAlbums = new Set();
+
+  async function getArtistDiscography(artist) {
+    try {
+      const urlDiscography =
+        "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + artist.name;
+      const response = await fetch(urlDiscography, options);
+      const data = await response.json();
+      const canzoni = data.data.filter(
+        (canzone) => canzone.artist.id === artist.id
+      );
+      console.log(canzoni);
+      return canzoni;
+    } catch (asdasd) {
+      console.error(asdasd);
+    }
+  }
+
+  function showMore(canzoni) {
+    albumsPerPage = 1000;
+    currentPage++;
+    mostraAlbum(canzoni);
+    const showMoreButton = document.getElementById("show-more-button");
+    showMoreButton.style.display = "none";
+  }
+
+  function addToSet(name, album) {
+    const nameAlreadyExists = Array.from(displayedAlbums).some(
+      (item) => item.album.title === name
+    );
+    if (!nameAlreadyExists) {
+      displayedAlbums.add(album);
+    }
+  }
+
+  function mostraAlbum(canzoni) {
+    const start = currentPage === 1 ? 0 : 5;
+    const end = start + albumsPerPage;
+
+    canzoni.forEach((x) => {
+      addToSet(x.album.title, x);
+    });
+
+    console.log(displayedAlbums);
+    Array.from(displayedAlbums)
+      .slice(start, end)
+      .forEach((result) => {
+        const album = result.album;
+        const col = document.createElement("div");
+        col.className = "col-md-2 mb-4";
+        const card = document.createElement("div");
+        card.className = "card album-card bg-transparent text-white border-0";
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+        const img = document.createElement("img");
+        img.src = album.cover_medium;
+        img.alt = album.title;
+        img.className = "img-fluid";
+        const title = document.createElement("h6");
+        title.className = "card-title mt-2";
+        title.textContent = album.title;
+        cardBody.appendChild(img);
+        cardBody.appendChild(title);
+        card.appendChild(cardBody);
+        col.appendChild(card);
+        const songCol = document.getElementById("tracksContainer");
+        songCol.appendChild(col);
+      });
+    if (end >= totalAlbums) {
+      const showMoreButton = document.getElementById("show-more-button");
+      showMoreButton.classList.add("d-none");
+    }
+  }
+
+  // * CHIAMATE DISCOGRAFIA
+
+  const artist = await getArtist();
+  getArtistDiscography(artist);
+  const canzoni = await getArtistDiscography(artist);
+  mostraAlbum(canzoni);
+  const showMoreButton = document.createElement("button");
+  showMoreButton.id = "show-more-button";
+  showMoreButton.type = "button";
+  showMoreButton.className = "btn border-0 bg-transparent fs-09 grey-font";
+  showMoreButton.innerText = "Show more";
+  showMoreButton.addEventListener("click", () => {
+    showMore(canzoni);
+  });
+  const songCol = document.getElementById("tracksContainer");
+  songCol.appendChild(showMoreButton);
+
+  async function getArtist() {
+    const apiUrl =
+      "https://deezerdevs-deezer.p.rapidapi.com/artist/" + artistId;
+    const response = await fetch(apiUrl, options);
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    return data;
   }
 }
