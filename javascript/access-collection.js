@@ -141,7 +141,7 @@ async function accessCollection(event) {
     innerCollection.appendChild(collectionBodyTop);
 
     const mainCollectionControls = document.createElement("div");
-    mainCollectionControls.className = "d-flex py-3 align-items-center gap-4";
+    mainCollectionControls.className = "d-flex align-items-center mt-4 gap-4";
     mainCollectionControls.innerTextFollowing;
     collectionBodyTop.appendChild(mainCollectionControls);
 
@@ -259,7 +259,7 @@ async function pullArtistTopTracks(artistId) {
 
     const popular = document.createElement("div");
     popular.className = "row";
-    popular.innerHTML = `<h2 class="text-white mt-3">Popular</h2>`;
+    popular.innerHTML = `<h2 class="text-white mb-3">Popular</h2>`;
     collectionBody.appendChild(popular);
 
     const songCol = document.createElement("div");
@@ -276,35 +276,51 @@ async function pullArtistTopTracks(artistId) {
 
     function renderTopTracks(topTracks) {
       if (topTracks.data) {
+        let songNumber = 1;
         topTracks.data.forEach((track) => {
           const card = document.createElement("div");
-          card.className = "card bg-transparent text-white border-0 mx-0";
+          card.className = "bg-transparent text-white border-0 mx-0 py-3";
+
           const cardBody = document.createElement("div");
-          cardBody.className = "card-body";
+          cardBody.className = "";
           const row = document.createElement("div");
           row.className = "row";
-          const imgColumn = document.createElement("div");
-          imgColumn.className = "col-md-4";
+
+          const rowMain = document.createElement("div");
+          rowMain.className = "d-flex align-items-center gap-4";
+
+          const songNum = document.createElement("span");
+          songNum.className = "grey-font fs-09";
+          songNum.innerText = songNumber;
+          rowMain.appendChild(songNum);
+
+          const imgColumn = document.createElement("span");
+          imgColumn.className = "grey-font fs-09";
 
           if (track.album.cover_small) {
             const img = document.createElement("img");
             img.src = track.album.cover_small;
             img.alt = track.title;
-            img.className = "img-fluid";
+            img.className = "img-fluid w-40px";
             imgColumn.appendChild(img);
           }
 
-          const textColumn = document.createElement("div");
-          textColumn.className = "col-md-8";
-          const title = document.createElement("h5");
-          title.className = "card-title";
+          const textColumn = document.createElement("span");
+          textColumn.className = "";
+
+          const title = document.createElement("span");
+          title.className = "text-white fs-5";
           title.textContent = track.title;
-          textColumn.appendChild(title);
-          row.appendChild(imgColumn);
-          row.appendChild(textColumn);
-          cardBody.appendChild(row);
-          card.appendChild(cardBody);
+
           songCol.appendChild(card);
+          card.appendChild(cardBody);
+          cardBody.appendChild(row);
+          row.appendChild(rowMain);
+          rowMain.appendChild(imgColumn);
+          rowMain.appendChild(textColumn);
+          textColumn.appendChild(title);
+          console.log(`-> item ${songNumber} generated`);
+          songNumber++;
         });
       } else {
         console.error("Nessuna traccia trovata nell'album.");
