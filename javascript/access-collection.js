@@ -15,8 +15,8 @@ async function accessCollection(event) {
 
     const output = await response.json();
 
-    const innerHomeSection = document.getElementById("main-body");
-    innerHomeSection.innerHTML = "";
+    const mainBody = document.getElementById("main-body");
+    mainBody.innerHTML = "";
 
     const dynamicBg = document.getElementById("dynamic-bg");
     dynamicBg.innerHTML = "";
@@ -26,7 +26,7 @@ async function accessCollection(event) {
       const section = document.createElement("section");
       section.id = "artist-page";
       section.className = "collection-page mb-1 mb-sm-2 mb-md-3 mb-lg-4";
-      innerHomeSection.appendChild(section);
+      mainBody.appendChild(section);
 
       const artist = document.createElement("div");
       artist.className = "d-flex gap-3";
@@ -84,7 +84,7 @@ async function accessCollection(event) {
       const section = document.createElement("section");
       section.id = "playlist-page";
       section.className = "collection-page mb-1 mb-sm-2 mb-md-3 mb-lg-4 mt-3";
-      innerHomeSection.appendChild(section);
+      mainBody.appendChild(section);
 
       const playlist = document.createElement("div");
       playlist.className = "d-flex gap-3";
@@ -135,7 +135,7 @@ async function accessCollection(event) {
     const innerCollection = document.createElement("div");
     innerCollection.classList =
       "container d-flex flex-column p-3 h-100 w-100 z-6 mt-25";
-    innerHomeSection.appendChild(innerCollection);
+    mainBody.appendChild(innerCollection);
 
     const collectionBodyTop = document.createElement("div");
     collectionBodyTop.className = "d-flex flex-column w-100";
@@ -147,18 +147,15 @@ async function accessCollection(event) {
     collectionBodyTop.appendChild(mainCollectionControls);
 
     const playPauseButton = document.createElement("button");
-    playPauseButton.id = "play-pause-button";
+    playPauseButton.id = "play-pause-button-1";
     playPauseButton.type = "button";
     playPauseButton.className = "w-48px rounded-circle";
     playPauseButton.innerHTML = `
     <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" class="w-32px currentcolor"><path d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"></path></svg>`;
     const artistId = output.id;
-    playPauseButton.addEventListener(
-      "click",
-      playPauseButton.addEventListener("click", function () {
-        playSong(artistId);
-      })
-    );
+    playPauseButton.addEventListener("click", function () {
+      playSong(artistId);
+    });
     mainCollectionControls.appendChild(playPauseButton);
 
     const shuffleButton = document.createElement("button");
@@ -205,15 +202,6 @@ async function accessCollection(event) {
     innerCollection.appendChild(collectionBody);
 
     if (output.type === "artist") {
-      const popular = document.createElement("div");
-      popular.className = "row";
-      popular.innerHTML = `<h2 class="text-white mt-3">Popular</h2>`;
-      collectionBody.appendChild(popular);
-
-      const songCol = document.createElement("div");
-      songCol.className = "col-12";
-      collectionBody.appendChild(songCol);
-
       const artistId = output.id;
       await pullArtistTopTracks(artistId);
     } else {
@@ -238,5 +226,45 @@ async function accessCollection(event) {
     }
   } catch (error) {
     console.error("🔴 Fetching error:", error);
+  }
+}
+
+async function pullArtistTopTracks(artistId) {
+  console.log(`-> Started pulling artist top tracks with id: ${artistId}`);
+  const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=10`;
+
+  try {
+    const output = await fetch(url, options);
+
+    if (!output.ok) {
+      throw new Error("🔴 Error");
+    }
+
+    console.log("--> Waiting for an output");
+
+    const topTracks = await output.json();
+    console.log("--> topTracks:", topTracks.data);
+
+    const mainBody = document.getElementById("inner-home-section");
+
+    const innerCollection = document.createElement("div");
+    innerCollection.className =
+      "container d-flex flex-column p-3 h-100 w-100 z-6 mt-25";
+    mainBody.appendChild(innerCollection);
+
+    const collectionBody = document.createElement("div");
+    collectionBody.className = "d-flex flex-column";
+    innerCollection.appendChild(collectionBody);
+
+    const popular = document.createElement("div");
+    popular.className = "row";
+    popular.innerHTML = `<h2 class="text-white mt-3">Popular</h2>`;
+    collectionBody.appendChild(popular);
+
+    const songCol = document.createElement("div");
+    songCol.className = "col-12";
+    collectionBody.appendChild(songCol);
+  } catch (error) {
+    console.error("🔴 Error fetching top tracks:", error);
   }
 }
