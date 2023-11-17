@@ -1,4 +1,3 @@
-console.log(apiKey);
 async function accessCollection(event) {
   event.preventDefault();
   const card = event.currentTarget;
@@ -229,6 +228,10 @@ async function accessCollection(event) {
   }
 }
 
+async function pullPlaylistTracks(artistId) {
+  console.log(`-> Started pulling artist top tracks with id: ${artistId}`);
+}
+
 async function pullArtistTopTracks(artistId) {
   console.log(`-> Started pulling artist top tracks with id: ${artistId}`);
   const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=10`;
@@ -242,10 +245,10 @@ async function pullArtistTopTracks(artistId) {
 
     console.log("--> Waiting for an output");
 
-    const topTracks = await output.json();
-    console.log("--> topTracks:", topTracks.data);
+    const jsonOutput = await output.json();
+    console.log("--> jsonOutput:", jsonOutput.data);
 
-    const mainBody = document.getElementById("inner-home-section");
+    const mainBody = document.getElementById("main-body");
 
     const innerCollection = document.createElement("div");
     innerCollection.className =
@@ -262,8 +265,55 @@ async function pullArtistTopTracks(artistId) {
     collectionBody.appendChild(popular);
 
     const songCol = document.createElement("div");
+    songCol.id = "tracksContainer";
     songCol.className = "col-12";
     collectionBody.appendChild(songCol);
+
+    async function getTopTracks() {
+      const apiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=10`;
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      return data;
+    }
+
+    function renderTopTracks(topTracks) {
+      if (topTracks.data) {
+        topTracks.data.forEach((track) => {
+          const card = document.createElement("div");
+          card.className = "card bg-transparent text-white border-0 mx-0";
+          const cardBody = document.createElement("div");
+          cardBody.className = "card-body";
+          const row = document.createElement("div");
+          row.className = "row";
+          const imgColumn = document.createElement("div");
+          imgColumn.className = "col-md-4";
+
+          if (track.album.cover_small) {
+            const img = document.createElement("img");
+            img.src = track.album.cover_small;
+            img.alt = track.title;
+            img.className = "img-fluid";
+            imgColumn.appendChild(img);
+          }
+
+          const textColumn = document.createElement("div");
+          textColumn.className = "col-md-8";
+          const title = document.createElement("h5");
+          title.className = "card-title";
+          title.textContent = track.title;
+          textColumn.appendChild(title);
+          row.appendChild(imgColumn);
+          row.appendChild(textColumn);
+          cardBody.appendChild(row);
+          card.appendChild(cardBody);
+          songCol.appendChild(card);
+        });
+      } else {
+        console.error("Nessuna traccia trovata nell'album.");
+      }
+    }
+    const topTracks = await getTopTracks();
+    renderTopTracks(topTracks);
   } catch (error) {
     console.error("🔴 Error fetching top tracks:", error);
   }

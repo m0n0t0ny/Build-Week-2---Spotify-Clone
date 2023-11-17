@@ -32,6 +32,10 @@ async function playSong(artistId) {
       } else {
         audioPlayer.pause();
         playButton.classList.remove("pause");
+        const play = document.getElementById("svg-play");
+        play.classList.toggle("d-none");
+        const pause = document.getElementById("svg-pause");
+        pause.classList.toggle("d-none");
         playButton.classList.add("play");
         console.log("⏯ Pause");
       }
@@ -61,7 +65,6 @@ async function playSong(artistId) {
 }
 
 const audioPlayer = document.getElementById("audio-player");
-const trackRange = document.getElementById("track-range");
 const trackDuration = document.getElementById("track-duration");
 
 function updateTrackDuration(duration) {
