@@ -19,7 +19,7 @@ VS Code: Development environment.
 Simply choose a folder where to clone this project and then clone this repo inside of it.<br>
 To clone the repository:<br>
 open cmd in and run the following code:<br>
-[git clone https://github.com/Manuel-Pinheiro-90/Build-week-2.git](https://github.com/m0n0t0ny/Build-Week-2---Spotify-Clone.git)<br>
+```git clone https://github.com/m0n0t0ny/Build-Week-2---Spotify-Clone.git```<br>
 
 ### Before you try it
 Can't play song directly, can only play 30 secs of a song of an album, playlist or artist.<br>
